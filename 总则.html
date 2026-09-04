@@ -42,6 +42,7 @@ code{font-family:var(--mono);font-size:13px;background:#eef3f6;border:1px solid 
 .t-scope{background:#e0f5f2;color:#0d9488}
 .t-files{background:#e9f0fd;color:#1e40af}
 .t-collab{background:#f3ebfb;color:#7c3aed}
+.t-memory{background:#fce7f3;color:#be185d}
 .btn{font-size:12.5px;font-weight:600;text-decoration:none;border:1px solid var(--ac);color:var(--ac);padding:4px 11px;border-radius:999px;background:#fff;white-space:nowrap}
 .btn:hover{background:var(--ac);color:#fff}
 h2{display:flex;align-items:center;gap:10px;font-size:20px;margin:34px 0 10px;letter-spacing:.5px}
@@ -65,17 +66,18 @@ h2 .cnt{margin-left:auto;font-size:12px;color:var(--sub);background:#e7efee;bord
   </div>
   <h1>总则 <span class="medal">🏛</span></h1>
   <p class="sub">会议通过的<b>最高结论</b>。只写结论、不做展开；每条归入分类、按标签动态过滤，并一键跳到 <a href="执行结构.html" style="color:#c7efe8">执行结构</a> 看落地详解。<b>只有会议逐条批准的内容才写入本页。</b></p>
-  <div class="meta"><span>已批准 7</span><span>分类 · 效力与总纲 + 文件与存储规范 + 协作与任务编排</span><span>状态 · 持续产出</span><span>更新 2026-09-04</span></div>
+  <div class="meta"><span>已批准 8</span><span>分类 · 效力与总纲 + 文件与存储规范 + 协作与任务编排 + 记忆与续作</span><span>状态 · 持续产出</span><span>更新 2026-09-04</span></div>
 </div></header>
 
 <div class="wrap">
-  <div class="banner"><b>已生效 7 条：Z-01 适用范围 · Z-02 模型文件统一仓 · Z-03 技能台账 · Z-04 MCP 与 CLI 工具台账 · Z-05 多 Agent 协作 · Z-06 治理文档统一版本库 · Z-07 外链巡检。</b>本页＝动态分类结论板：每条一张结论卡 + 分类标签，卡上 [执行详解 ▸] 跳执行结构。未批准的想法仍在 草案.html。</div>
+  <div class="banner"><b>已生效 8 条：Z-01 适用范围 · Z-02 模型文件统一仓 · Z-03 技能台账 · Z-04 MCP 与 CLI 工具台账 · Z-05 多 Agent 协作 · Z-06 治理文档统一版本库 · Z-07 外链巡检 · Z-08 纪要即记忆 · 跨会话续作。</b>本页＝动态分类结论板：每条一张结论卡 + 分类标签，卡上 [执行详解 ▸] 跳执行结构。未批准的想法仍在 草案.html。</div>
 
   <div class="filter">
-    <span class="chip on">全部 <span class="n">7</span></span>
+    <span class="chip on">全部 <span class="n">8</span></span>
     <span class="chip">效力与总纲 <span class="n">1</span></span>
     <span class="chip">文件与存储规范 <span class="n">5</span></span>
     <span class="chip">协作与任务编排 <span class="n">1</span></span>
+    <span class="chip">记忆与续作 <span class="n">1</span></span>
   </div>
   <p style="font-size:12.5px;color:var(--sub);margin:2px 0 0">分类胶囊随内容自动增减——后续新条归入新的分类时，胶囊随之增长。</p>
 
@@ -143,6 +145,15 @@ h2 .cnt{margin-left:auto;font-size:12px;color:var(--sub);background:#e7efee;bord
       <div class="tags"><span class="tag t-files">文件与存储规范</span></div>
       <a class="btn" href="执行结构.html#E-07">执行详解 ▸</a>
     </div>
+    <div class="pcard" id="z-08" style="border-left-color:#be185d">
+      <div class="pt">
+        <b>纪要即记忆 · 跨会话续作</b>
+        <span class="pno">Z-08 · 已批准 2026-09-04</span>
+        <p class="ztext">会议/定案/治理大任务，必在 E:\claude code总则\过程记录 留"只增不改"纪要（编号 YYYY-MM-DD-NN-主题）；治理体系之外的各项目，凡预期跨会话或跨天继续的复杂工作，收尾同样留一份简短交接纪要。纪要为本机工作记忆源——会话压缩或换新窗口后，续作先读纪要再接续，不靠人脑、不靠聊天记录。</p>
+      </div>
+      <div class="tags"><span class="tag t-memory">记忆与续作</span></div>
+      <a class="btn" href="执行结构.html#E-08">执行详解 ▸</a>
+    </div>
   </div>
 
   <h2>本页规则<span class="tick"></span></h2>
@@ -153,8 +164,8 @@ h2 .cnt{margin-left:auto;font-size:12px;color:var(--sub);background:#e7efee;bord
     <li><span class="k">逐条批准</span><span class="v">写入前必须已获你明确同意；否决项留在草案。</span></li>
   </ul></div>
 
-  <h2>变更记录<span class="tick"></span><span class="cnt">v0.10 · 已批准 7 条</span></h2>
-  <p class="cl">2026-09-03 · v0.1 建档（误含方法论 R-0~R-5）。v0.2 清空、逐条批准制。v0.3 立宪更名：正式定名「总则」，动态分类结论板，与执行结构一一对应互跳。<br>2026-09-03 · v0.4 写入 Z-01（适用范围·效力与总纲），移除界面示意演示区，镜像部署用户级 CLAUDE.md。<br>2026-09-03 · v0.5 写入 Z-02（模型文件统一仓 · E:\model · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。工具缓存环境变量归拢清单待用户批。<br>2026-09-04 · v0.6 写入 Z-03（技能台账 · E:\skill · 登记制 · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.7 写入 Z-04（MCP 服务与 CLI 工具台账 · E:\mcp / E:\cli · 登记制 · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.8 写入 Z-05（多 Agent 协作 · 全机行为默认 · 协作与任务编排）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.9 写入 Z-06（治理文档统一版本库 · git · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.10 写入 Z-07（外链巡检 · 登记↔实体一致性核查 · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。</p>
+  <h2>变更记录<span class="tick"></span><span class="cnt">v0.11 · 已批准 8 条</span></h2>
+  <p class="cl">2026-09-03 · v0.1 建档（误含方法论 R-0~R-5）。v0.2 清空、逐条批准制。v0.3 立宪更名：正式定名「总则」，动态分类结论板，与执行结构一一对应互跳。<br>2026-09-03 · v0.4 写入 Z-01（适用范围·效力与总纲），移除界面示意演示区，镜像部署用户级 CLAUDE.md。<br>2026-09-03 · v0.5 写入 Z-02（模型文件统一仓 · E:\model · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。工具缓存环境变量归拢清单待用户批。<br>2026-09-04 · v0.6 写入 Z-03（技能台账 · E:\skill · 登记制 · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.7 写入 Z-04（MCP 服务与 CLI 工具台账 · E:\mcp / E:\cli · 登记制 · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.8 写入 Z-05（多 Agent 协作 · 全机行为默认 · 协作与任务编排）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.9 写入 Z-06（治理文档统一版本库 · git · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.10 写入 Z-07（外链巡检 · 登记↔实体一致性核查 · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.11 写入 Z-08（纪要即记忆 · 跨会话续作 · 记忆与续作）；镜像追加至用户级 CLAUDE.md。</p>
 </div>
 </body>
 </html>

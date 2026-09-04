@@ -66,7 +66,7 @@ tr:last-child td{border-bottom:none}
   </div>
   <h1>执行结构</h1>
   <p class="sub"><a href="总则.html" style="color:#bfecf4">总则</a> 每一条的展开说明：这条到底怎么落地、怎么生效。与总则<b>一一对应、双向跳转</b>。<b>落地说明按实际情况写、不套模板</b>；每条末尾必带「通俗解释」与「名词解释」两块。</p>
-  <div class="meta"><span>正式展开 7</span><span>与总则 1:1</span><span>更新 2026-09-04</span></div>
+  <div class="meta"><span>正式展开 8</span><span>与总则 1:1</span><span>更新 2026-09-04</span></div>
 </div></header>
 
 <div class="wrap">
@@ -82,6 +82,7 @@ tr:last-child td{border-bottom:none}
     <tr><td><a href="总则.html#z-05">Z-05</a> 多 Agent 协作 · 全机行为默认</td><td><a href="#E-05">E-05</a> · 含 落地说明 / 通俗解释 / 名词解释</td><td>已生效 · 已部署全机</td></tr>
     <tr><td><a href="总则.html#z-06">Z-06</a> 治理文档统一版本库</td><td><a href="#E-06">E-06</a> · 含 落地说明 / 通俗解释 / 名词解释</td><td>已生效 · 已部署全机</td></tr>
     <tr><td><a href="总则.html#z-07">Z-07</a> 外链巡检</td><td><a href="#E-07">E-07</a> · 含 落地说明 / 通俗解释 / 名词解释</td><td>已生效 · 已部署全机</td></tr>
+    <tr><td><a href="总则.html#z-08">Z-08</a> 纪要即记忆 · 跨会话续作</td><td><a href="#E-08">E-08</a> · 含 落地说明 / 通俗解释 / 名词解释</td><td>已生效 · 已部署全机</td></tr>
   </table>
 
   <h2>每条展开的组织方式 <span class="tick"></span><span class="cnt">不套模板 · 按实情写</span></h2>
@@ -93,7 +94,7 @@ tr:last-child td{border-bottom:none}
     </ul>
   </div></div>
 
-  <h2>正式展开<span class="tick"></span><span class="cnt">Z-01 · Z-02 · Z-03 · Z-04 · Z-05 · Z-06 · Z-07</span></h2>
+  <h2>正式展开<span class="tick"></span><span class="cnt">Z-01 · Z-02 · Z-03 · Z-04 · Z-05 · Z-06 · Z-07 · Z-08</span></h2>
 
   <div class="pair" id="E-01">
     <div class="phead"><span class="zid">E-01</span><b>Z-01 适用范围 · 怎么落地</b><span class="back"><a href="总则.html#z-01" style="text-decoration:none;color:inherit">◂ 返回总则</a></span></div>
@@ -317,8 +318,31 @@ tr:last-child td{border-bottom:none}
     </div>
   </div>
 
-  <h2>变更记录<span class="tick"></span><span class="cnt">v0.11 · 正式展开 7</span></h2>
-  <p class="cl">2026-09-03 · v0.3 立宪：定位为总则逐条展开、双向锚点。<br>2026-09-03 · v0.4 依会议指示：①取消固定模板，落地说明按实情自由写；②每条末尾必带「通俗解释」；③每条末尾附「名词解释」（覆盖编程与 AI 词汇，允许跨条重复）。<br>2026-09-03 · v0.5 移除演示条目，写入第一条正式展开 E-01（Z-01 适用范围）。<br>2026-09-03 · v0.6 写入第二条正式展开 E-02（Z-02 模型文件统一仓），同步索引表。<br>2026-09-04 · v0.7 写入第三条正式展开 E-03（Z-03 技能台账），同步索引表。<br>2026-09-04 · v0.8 写入第四条正式展开 E-04（Z-04 MCP 与 CLI 工具台账），同步索引表。<br>2026-09-04 · v0.9 写入第五条正式展开 E-05（Z-05 多 Agent 协作 · 全机行为默认），同步索引表。<br>2026-09-04 · v0.10 写入第六条正式展开 E-06（Z-06 治理文档统一版本库 · git），同步索引表。<br>2026-09-04 · v0.11 写入第七条正式展开 E-07（Z-07 外链巡检 · 登记↔实体一致性核查），同步索引表。</p>
+  <div class="pair" id="E-08">
+    <div class="phead"><span class="zid">E-08</span><b>Z-08 纪要即记忆 · 跨会话续作 · 怎么落地</b><span class="back"><a href="总则.html#z-08" style="text-decoration:none;color:inherit">◂ 返回总则</a></span></div>
+    <div class="pbody">
+      <div class="lbl">落地说明</div>
+      <p style="margin:2px 0 0">这条把「纪要」立为本机工作记忆源，分<b>治理层</b>与<b>通用层</b>两层触发、两层都立。</p>
+      <p style="margin:8px 0 0"><b>治理层：</b>凡会议/候选议处/定案/收尾批，落档即同步写纪要，编号 YYYY-MM-DD-NN-主题，只增不改（历史由 git 保证）。</p>
+      <p style="margin:8px 0 0"><b>通用层：</b>任何项目内凡预期跨会话/跨天继续的复杂工作，主会话收尾或临近结束时留一份简短"交接纪要"，内容＝已完成／未完成／下一步／关键上下文／所在位置，就近放该项目（项目 过程记录 或 README 等文档）。</p>
+      <p style="margin:8px 0 0"><b>续作规矩：</b>新会话接到续作请求，先读对应纪要再接续，不翻聊天记录、不靠人脑；无纪要先补记再谈。</p>
+      <p style="margin:8px 0 0"><b>豁免与纪律：</b>琐碎问答不记；纪要内不落明文凭据（呼应 Z-09 方向）。</p>
+      <div class="lbl">通俗解释</div>
+      <div class="plain">纪要＝工作交接单。续活前先看交接单知道干到哪；收工写一页；换会话/换机靠交接单不靠嘴上说。</div>
+      <div class="lbl">名词解释</div>
+      <ul class="gloss">
+        <li><span class="t">纪要</span><span class="d">工作交接/会议记录文档；本体系以 YYYY-MM-DD-NN-主题 编号归档，是本机工作记忆源。</span></li>
+        <li><span class="t">过程记录</span><span class="d">本治理体系存放纪要的目录 <code>E:\claude code总则\过程记录</code>；只增不改。</span></li>
+        <li><span class="t">只增不改</span><span class="d">已写入的纪要不再改写历史，修订以追加新纪要表达；git 保证历史可回溯、可回滚。</span></li>
+        <li><span class="t">交接纪要</span><span class="d">通用层项目收尾留下的简短交接单，内容＝已完成/未完成/下一步/关键上下文/所在位置。</span></li>
+        <li><span class="t">跨会话续作</span><span class="d">一个复杂工作从一次 Claude Code 会话延续到另一次/另一天继续做；靠纪要接续状态。</span></li>
+        <li><span class="t">记忆源</span><span class="d">判断"工作干到哪、接下来做什么"所依据的权威出处——本则定为纪要，而非人脑或聊天记录。</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>变更记录<span class="tick"></span><span class="cnt">v0.12 · 正式展开 8</span></h2>
+  <p class="cl">2026-09-03 · v0.3 立宪：定位为总则逐条展开、双向锚点。<br>2026-09-03 · v0.4 依会议指示：①取消固定模板，落地说明按实情自由写；②每条末尾必带「通俗解释」；③每条末尾附「名词解释」（覆盖编程与 AI 词汇，允许跨条重复）。<br>2026-09-03 · v0.5 移除演示条目，写入第一条正式展开 E-01（Z-01 适用范围）。<br>2026-09-03 · v0.6 写入第二条正式展开 E-02（Z-02 模型文件统一仓），同步索引表。<br>2026-09-04 · v0.7 写入第三条正式展开 E-03（Z-03 技能台账），同步索引表。<br>2026-09-04 · v0.8 写入第四条正式展开 E-04（Z-04 MCP 与 CLI 工具台账），同步索引表。<br>2026-09-04 · v0.9 写入第五条正式展开 E-05（Z-05 多 Agent 协作 · 全机行为默认），同步索引表。<br>2026-09-04 · v0.10 写入第六条正式展开 E-06（Z-06 治理文档统一版本库 · git），同步索引表。<br>2026-09-04 · v0.11 写入第七条正式展开 E-07（Z-07 外链巡检 · 登记↔实体一致性核查），同步索引表。<br>2026-09-04 · v0.12 写入第八条正式展开 E-08（Z-08 纪要即记忆 · 跨会话续作），同步索引表。</p>
 </div>
 </body>
 </html>
