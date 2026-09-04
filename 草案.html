@@ -55,45 +55,13 @@ h2 .cnt{margin-left:auto;font-size:12px;color:var(--sub);background:#eef0f6;bord
   </div>
   <h1>草案</h1>
   <p class="sub">提交给会议的候选。想法先在此起草、评审；<b>只有会议（用户）逐条批准后</b>才写入 <a href="总则.html" style="color:#c7d2fe">总则.html</a>。本页只收「总则内容」候选，不含方法论。</p>
-  <div class="meta"><span>候选 3</span><span>3 候选在审 · 逐条议处</span><span>最近定案 · T-09 → Z-09</span><span>更新 2026-09-04</span></div>
+  <div class="meta"><span>候选 1</span><span>1 候选在审 · 逐条议处</span><span>最近定案 · T-11→Z-11、T-12→Z-12</span><span>更新 2026-09-05</span></div>
 </div></header>
 
 <div class="wrap">
-  <div class="banner">候选 T-11（记忆分层）/ T-12（红线钩子）/ T-13（定时任务）新增在审，2026-09-04 起草，逐条批准后进 总则。</div>
+  <div class="banner">T-11→Z-11、T-12→Z-12 已定案；T-13 定时边界 留审中。</div>
 
-  <h2>候选条款 <span class="tick"></span><span class="cnt">3 · 在审</span></h2>
-
-  <div class="card">
-    <div class="band" style="background:#d97706"></div>
-    <div class="card-in">
-      <div class="card-top"><span class="chip" style="background:#fdf3de;color:#b45309">候选</span><h3 class="ct">T-11 · 记忆分层 · 各司其职不打架<small>拟定 → Z-11</small></h3></div>
-      <ul class="kv">
-        <li><span class="k">范围</span><span class="v">本机 Claude Code 的记忆层：用户级 CLAUDE.md（总则镜像）、auto memory（~/.claude/projects/…/memory）、过程记录 纪要（Z-08）、助理活档。</span></li>
-        <li><span class="k">分层</span><span class="v">CLAUDE.md＝稳定规则/红线镜像，只放总则定稿、单向同步、不塞琐事；memory＝事实/偏好/纠偏，一条事实一个文件，MEMORY.md 只放一行条目索引；纪要＝只增不改的正式过程（Z-08）；活档＝助理人格维护的进行态。</span></li>
-        <li><span class="k">纪律</span><span class="v">一条事实只落一层，不两处重复（重复＝双份常驻 token＋可能冲突）；能从代码/git 推得者不写；能立成规则的进 总则/CLAUDE.md，属个人或项目语境的进 memory，属正式过程的进 纪要。</span></li>
-        <li><span class="k">索引护理</span><span class="v">MEMORY.md 每会话仅注入索引头，约 200 行/25KB 后静默截断、超限即"无声失忆"：控制条目数，定期 /memory 清理。</span></li>
-        <li><span class="k">红线</span><span class="v">memory 明文落盘，遵守 Z-09 不落凭据；涉密强度要求高时可整体关闭 auto memory（autoMemoryEnabled）。</span></li>
-        <li><span class="k">注记</span><span class="v">把 Z-08 之外"事实/偏好/纠偏往哪写"补成整套分层（Z-08 只覆盖纪要层）；已核实 memory 每会话只注入索引头、主题文件按需读。</span></li>
-        <li><span class="k">状态</span><span class="v">候选 · 在审 · 待批准入 Z-11。</span></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="band" style="background:#d97706"></div>
-    <div class="card-in">
-      <div class="card-top"><span class="chip" style="background:#fdf3de;color:#b45309">候选</span><h3 class="ct">T-12 · 红线钩子化 · 机器把关<small>拟定 → Z-12</small></h3></div>
-      <ul class="kv">
-        <li><span class="k">范围</span><span class="v">用户级 ~/.claude/settings.json 的 hooks ＋独立守卫脚本目录；先把 Z-09（凭据零明文）等最要命红线挂硬拦；密提交另叠 git pre-commit 双保险。</span></li>
-        <li><span class="k">机制</span><span class="v">PreToolUse 在权限检查前执行、能穿透 bypassPermissions，钩子只能收紧不能放松——把 Z-09 变成"写文件/密提交前扫描、命中即 deny"的机器闸。</span></li>
-        <li><span class="k">fail-closed</span><span class="v">守卫脚本 catch 一切异常后按"拦"处理（钩子默认超时 60s、退出码非 2 即放行＝fail-open；误配成 exit 1 等于没拦，是最常见的坑）。</span></li>
-        <li><span class="k">双保险</span><span class="v">Claude 会话内动作由 Code hook 拦；含人手在内的所有提交由 git pre-commit 拦；两层叠用才是真强制。</span></li>
-        <li><span class="k">边界</span><span class="v">hook 是配置文件、会话内可被诱导改动，本质是"防线不是锁"；个人机要真锁靠系统只读 ACL 锁 settings/hook 文件（管理员可改）。不把 hook 当绝对安全。</span></li>
-        <li><span class="k">注记</span><span class="v">执行时先试点再放开，避免误拦卡日常；hook 配置变更纳入登记与复核。</span></li>
-        <li><span class="k">状态</span><span class="v">候选 · 在审 · 待批准入 Z-12。</span></li>
-      </ul>
-    </div>
-  </div>
+  <h2>候选条款 <span class="tick"></span><span class="cnt">1 · 在审</span></h2>
 
   <div class="card">
     <div class="band" style="background:#d97706"></div>
@@ -111,8 +79,8 @@ h2 .cnt{margin-left:auto;font-size:12px;color:var(--sub);background:#eef0f6;bord
     </div>
   </div>
 
-  <h2>变更记录<span class="tick"></span><span class="cnt">v0.20</span></h2>
-  <p class="cl">2026-09-03 · v0.1 建档（含方法论候选）。v0.2 清为内容候选收件箱。v0.3 立宪更名。v0.4 新增候选 T-01（适用范围）。v0.5 T-01 定案纳入 总则 Z-01，清位。v0.6 新增候选 T-02（模型文件统一仓）。v0.7 T-02 定案纳入 总则 Z-02，清位为空收件箱。2026-09-04 · v0.8 新增候选 T-03（技能台账 · E:\skill 登记制）。2026-09-04 · v0.9 T-03 定案纳入 总则 Z-03，清位为空收件箱，留定案轨迹。2026-09-04 · v0.10 新增候选 T-04（MCP 服务与 CLI 工具台账 · 登记制）。2026-09-04 · v0.11 T-04 定案纳入 总则 Z-04，清位为空收件箱，留定案轨迹。2026-09-04 · v0.12 新增候选 T-05（多 Agent 协作 · 全机总则行为默认 ＋ Skill 封装）。2026-09-04 · v0.13 T-05 定案纳入 总则 Z-05（多 Agent 协作 · 全机行为默认）＋封装 Skill，清位为空收件箱，留定案轨迹。2026-09-04 · v0.14 新增候选 T-06（版本库）、T-07（外链巡检）、T-08（纪要即记忆）、T-09（敏感信息红线）。2026-09-04 · v0.15 T-06 定案纳入 总则 Z-06（治理文档统一版本库 git），清位留轨迹。2026-09-04 · v0.16 T-07 定案纳入 总则 Z-07（外链巡检 · 登记↔实体一致性核查），清位留轨迹。2026-09-04 · v0.17 T-08 定案纳入 总则 Z-08（纪要即记忆 · 跨会话续作），清位留轨迹。2026-09-04 · v0.18 T-10 治理体系多机部署经直接议定入宪 总则 Z-10（主仓权威 · 使用机只读），未设候选卡，留轨迹。<br>2026-09-04 · v0.19 T-09 定案纳入 总则 Z-09（敏感信息红线 · 凭据零明文），清位留轨迹。<br>2026-09-04 · v0.20 新增候选 T-11（记忆分层）、T-12（红线钩子）、T-13（例行任务定时化）。</p>
+  <h2>变更记录<span class="tick"></span><span class="cnt">v0.21</span></h2>
+  <p class="cl">2026-09-03 · v0.1 建档（含方法论候选）。v0.2 清为内容候选收件箱。v0.3 立宪更名。v0.4 新增候选 T-01（适用范围）。v0.5 T-01 定案纳入 总则 Z-01，清位。v0.6 新增候选 T-02（模型文件统一仓）。v0.7 T-02 定案纳入 总则 Z-02，清位为空收件箱。2026-09-04 · v0.8 新增候选 T-03（技能台账 · E:\skill 登记制）。2026-09-04 · v0.9 T-03 定案纳入 总则 Z-03，清位为空收件箱，留定案轨迹。2026-09-04 · v0.10 新增候选 T-04（MCP 服务与 CLI 工具台账 · 登记制）。2026-09-04 · v0.11 T-04 定案纳入 总则 Z-04，清位为空收件箱，留定案轨迹。2026-09-04 · v0.12 新增候选 T-05（多 Agent 协作 · 全机总则行为默认 ＋ Skill 封装）。2026-09-04 · v0.13 T-05 定案纳入 总则 Z-05（多 Agent 协作 · 全机行为默认）＋封装 Skill，清位为空收件箱，留定案轨迹。2026-09-04 · v0.14 新增候选 T-06（版本库）、T-07（外链巡检）、T-08（纪要即记忆）、T-09（敏感信息红线）。2026-09-04 · v0.15 T-06 定案纳入 总则 Z-06（治理文档统一版本库 git），清位留轨迹。2026-09-04 · v0.16 T-07 定案纳入 总则 Z-07（外链巡检 · 登记↔实体一致性核查），清位留轨迹。2026-09-04 · v0.17 T-08 定案纳入 总则 Z-08（纪要即记忆 · 跨会话续作），清位留轨迹。2026-09-04 · v0.18 T-10 治理体系多机部署经直接议定入宪 总则 Z-10（主仓权威 · 使用机只读），未设候选卡，留轨迹。<br>2026-09-04 · v0.19 T-09 定案纳入 总则 Z-09（敏感信息红线 · 凭据零明文），清位留轨迹。<br>2026-09-04 · v0.20 新增候选 T-11（记忆分层）、T-12（红线钩子）、T-13（例行任务定时化）。<br>2026-09-05 · v0.21 T-11（记忆分层）定案纳入 总则 Z-11、T-12（红线钩子）定案纳入 总则 Z-12，清位留轨迹；T-13（例行任务定时化）留审在案。</p>
 </div>
 </body>
 </html>
