@@ -66,7 +66,7 @@ tr:last-child td{border-bottom:none}
   </div>
   <h1>执行结构</h1>
   <p class="sub"><a href="总则.html" style="color:#bfecf4">总则</a> 每一条的展开说明：这条到底怎么落地、怎么生效。与总则<b>一一对应、双向跳转</b>。<b>落地说明按实际情况写、不套模板</b>；每条末尾必带「通俗解释」与「名词解释」两块。</p>
-  <div class="meta"><span>正式展开 9</span><span>与总则 1:1</span><span>更新 2026-09-04</span></div>
+  <div class="meta"><span>正式展开 10</span><span>与总则 1:1</span><span>更新 2026-09-04</span></div>
 </div></header>
 
 <div class="wrap">
@@ -83,6 +83,7 @@ tr:last-child td{border-bottom:none}
     <tr><td><a href="总则.html#z-06">Z-06</a> 治理文档统一版本库</td><td><a href="#E-06">E-06</a> · 含 落地说明 / 通俗解释 / 名词解释</td><td>已生效 · 已部署全机</td></tr>
     <tr><td><a href="总则.html#z-07">Z-07</a> 外链巡检</td><td><a href="#E-07">E-07</a> · 含 落地说明 / 通俗解释 / 名词解释</td><td>已生效 · 已部署全机</td></tr>
     <tr><td><a href="总则.html#z-08">Z-08</a> 纪要即记忆 · 跨会话续作</td><td><a href="#E-08">E-08</a> · 含 落地说明 / 通俗解释 / 名词解释</td><td>已生效 · 已部署全机</td></tr>
+    <tr><td><a href="总则.html#z-09">Z-09</a> 敏感信息红线 · 凭据零明文</td><td><a href="#E-09">E-09</a> · 含 落地说明 / 通俗解释 / 名词解释</td><td>已生效 · 已部署全机</td></tr>
     <tr><td><a href="总则.html#z-10">Z-10</a> 治理体系多机部署</td><td><a href="#E-10">E-10</a> · 含 落地说明 / 通俗解释 / 名词解释</td><td>已生效 · 主控机已部署 · 使用机待试点</td></tr>
   </table>
 
@@ -95,7 +96,7 @@ tr:last-child td{border-bottom:none}
     </ul>
   </div></div>
 
-  <h2>正式展开<span class="tick"></span><span class="cnt">Z-01 · Z-02 · Z-03 · Z-04 · Z-05 · Z-06 · Z-07 · Z-08 · Z-10</span></h2>
+  <h2>正式展开<span class="tick"></span><span class="cnt">Z-01 · Z-02 · Z-03 · Z-04 · Z-05 · Z-06 · Z-07 · Z-08 · Z-09 · Z-10</span></h2>
 
   <div class="pair" id="E-01">
     <div class="phead"><span class="zid">E-01</span><b>Z-01 适用范围 · 怎么落地</b><span class="back"><a href="总则.html#z-01" style="text-decoration:none;color:inherit">◂ 返回总则</a></span></div>
@@ -342,6 +343,27 @@ tr:last-child td{border-bottom:none}
     </div>
   </div>
 
+  <div class="pair" id="E-09">
+    <div class="phead"><span class="zid">E-09</span><b>Z-09 敏感信息红线 · 凭据零明文 · 怎么落地</b><span class="back"><a href="总则.html#z-09" style="text-decoration:none;color:inherit">◂ 返回总则</a></span></div>
+    <div class="pbody">
+      <div class="lbl">落地说明</div>
+      <p style="margin:2px 0 0"><b>结论：</b>治理体系全部文件（纪要/草案/台账/总则/执行结构/HTML 等）一律不落明文凭据（API key/口令/token/私钥），需要时只写环境变量名或占位符。发现已落者，即改写为引用并提醒当事人。本仓公开托管、历史经 git 全量可查——凡进入过公开仓的明文一律视为已泄露，应作废更换而非改写掩盖；外发/展示前先自查。</p>
+      <p style="margin:8px 0 0"><b>① 零明文口径：</b>全体系文件（纪要/草案/台账/总则/执行结构/HTML 及各类引用）一律不落 API key/口令/token/私钥/密钥串明文；确需引用只写环境变量名（如 <code>ANTHROPIC_API_KEY</code>）或占位符（如 <code>&lt;KEY&gt;</code>）；含凭据/远程项一律指到环境变量名。</p>
+      <p style="margin:8px 0 0"><b>② 已落者处置：</b>发现已落明文 → 立即改写为环境变量名/占位符引用并提醒当事人；凡进入过公开仓者一律视同已泄露——作废该 key/token 并更换新值，不靠改写掩盖（git 历史不可抹，公开即不可收回）。</p>
+      <p style="margin:8px 0 0"><b>③ 落档自查（第一层）：</b>书记每次写纪要/台账/草案等文件，存盘前自查一遍无明文凭据。</p>
+      <p style="margin:8px 0 0"><b>④ 巡检例行扫描（第二层）：</b>外链巡检（Z-07 / Skill S-010）固定加一条——扫治理目录的明文凭据痕迹（sk-…/token/ghp_/私钥块/Google API key 等字样），只提示不改动，结果记入当周纪要。</p>
+      <div class="lbl">通俗解释</div>
+      <div class="plain">别把家门钥匙的照片贴到公共墙上；万一已经贴了，正确做法是换锁（作废换新），而不是把照片涂掉——贴出去就收不回来了。</div>
+      <div class="lbl">名词解释</div>
+      <ul class="gloss">
+        <li><span class="t">明文凭据</span><span class="d">API key/口令/token/私钥的真实值。</span></li>
+        <li><span class="t">环境变量名</span><span class="d">如 ANTHROPIC_API_KEY，本身不是秘密。</span></li>
+        <li><span class="t">占位符</span><span class="d">如 &lt;KEY&gt;，指"此处填你的 key"。</span></li>
+        <li><span class="t">作废更换</span><span class="d">revoke：让旧 key 失效再发新的。</span></li>
+      </ul>
+    </div>
+  </div>
+
   <div class="pair" id="E-10">
     <div class="phead"><span class="zid">E-10</span><b>Z-10 治理体系多机部署 · 主仓权威 · 使用机只读 · 怎么落地</b><span class="back"><a href="总则.html#z-10" style="text-decoration:none;color:inherit">◂ 返回总则</a></span></div>
     <div class="pbody">
@@ -367,8 +389,8 @@ tr:last-child td{border-bottom:none}
     </div>
   </div>
 
-  <h2>变更记录<span class="tick"></span><span class="cnt">v0.13 · 正式展开 9</span></h2>
-  <p class="cl">2026-09-03 · v0.3 立宪：定位为总则逐条展开、双向锚点。<br>2026-09-03 · v0.4 依会议指示：①取消固定模板，落地说明按实情自由写；②每条末尾必带「通俗解释」；③每条末尾附「名词解释」（覆盖编程与 AI 词汇，允许跨条重复）。<br>2026-09-03 · v0.5 移除演示条目，写入第一条正式展开 E-01（Z-01 适用范围）。<br>2026-09-03 · v0.6 写入第二条正式展开 E-02（Z-02 模型文件统一仓），同步索引表。<br>2026-09-04 · v0.7 写入第三条正式展开 E-03（Z-03 技能台账），同步索引表。<br>2026-09-04 · v0.8 写入第四条正式展开 E-04（Z-04 MCP 与 CLI 工具台账），同步索引表。<br>2026-09-04 · v0.9 写入第五条正式展开 E-05（Z-05 多 Agent 协作 · 全机行为默认），同步索引表。<br>2026-09-04 · v0.10 写入第六条正式展开 E-06（Z-06 治理文档统一版本库 · git），同步索引表。<br>2026-09-04 · v0.11 写入第七条正式展开 E-07（Z-07 外链巡检 · 登记↔实体一致性核查），同步索引表。<br>2026-09-04 · v0.12 写入第八条正式展开 E-08（Z-08 纪要即记忆 · 跨会话续作），同步索引表。<br>2026-09-04 · v0.13 写入正式展开 E-10（Z-10 治理体系多机部署 · 主仓权威 · 使用机只读），同步索引表（Z-09 暂缺待 T-09）。</p>
+  <h2>变更记录<span class="tick"></span><span class="cnt">v0.14 · 正式展开 10</span></h2>
+  <p class="cl">2026-09-03 · v0.3 立宪：定位为总则逐条展开、双向锚点。<br>2026-09-03 · v0.4 依会议指示：①取消固定模板，落地说明按实情自由写；②每条末尾必带「通俗解释」；③每条末尾附「名词解释」（覆盖编程与 AI 词汇，允许跨条重复）。<br>2026-09-03 · v0.5 移除演示条目，写入第一条正式展开 E-01（Z-01 适用范围）。<br>2026-09-03 · v0.6 写入第二条正式展开 E-02（Z-02 模型文件统一仓），同步索引表。<br>2026-09-04 · v0.7 写入第三条正式展开 E-03（Z-03 技能台账），同步索引表。<br>2026-09-04 · v0.8 写入第四条正式展开 E-04（Z-04 MCP 与 CLI 工具台账），同步索引表。<br>2026-09-04 · v0.9 写入第五条正式展开 E-05（Z-05 多 Agent 协作 · 全机行为默认），同步索引表。<br>2026-09-04 · v0.10 写入第六条正式展开 E-06（Z-06 治理文档统一版本库 · git），同步索引表。<br>2026-09-04 · v0.11 写入第七条正式展开 E-07（Z-07 外链巡检 · 登记↔实体一致性核查），同步索引表。<br>2026-09-04 · v0.12 写入第八条正式展开 E-08（Z-08 纪要即记忆 · 跨会话续作），同步索引表。<br>2026-09-04 · v0.13 写入正式展开 E-10（Z-10 治理体系多机部署 · 主仓权威 · 使用机只读），同步索引表（Z-09 暂缺待 T-09）。<br>2026-09-04 · v0.14 写入正式展开 E-09（Z-09 敏感信息红线 · 凭据零明文），同步索引表（补上 Z-09 缺口，正式展开 9→10）。</p>
 </div>
 </body>
 </html>
