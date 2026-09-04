@@ -66,7 +66,7 @@ tr:last-child td{border-bottom:none}
   </div>
   <h1>执行结构</h1>
   <p class="sub"><a href="总则.html" style="color:#bfecf4">总则</a> 每一条的展开说明：这条到底怎么落地、怎么生效。与总则<b>一一对应、双向跳转</b>。<b>落地说明按实际情况写、不套模板</b>；每条末尾必带「通俗解释」与「名词解释」两块。</p>
-  <div class="meta"><span>正式展开 5</span><span>与总则 1:1</span><span>更新 2026-09-04</span></div>
+  <div class="meta"><span>正式展开 6</span><span>与总则 1:1</span><span>更新 2026-09-04</span></div>
 </div></header>
 
 <div class="wrap">
@@ -80,6 +80,7 @@ tr:last-child td{border-bottom:none}
     <tr><td><a href="总则.html#z-03">Z-03</a> 技能台账</td><td><a href="#E-03">E-03</a> · 含 落地说明 / 通俗解释 / 名词解释</td><td>已生效 · 已部署全机</td></tr>
     <tr><td><a href="总则.html#z-04">Z-04</a> MCP 与 CLI 工具台账</td><td><a href="#E-04">E-04</a> · 含 落地说明 / 通俗解释 / 名词解释</td><td>已生效 · 已部署全机</td></tr>
     <tr><td><a href="总则.html#z-05">Z-05</a> 多 Agent 协作 · 全机行为默认</td><td><a href="#E-05">E-05</a> · 含 落地说明 / 通俗解释 / 名词解释</td><td>已生效 · 已部署全机</td></tr>
+    <tr><td><a href="总则.html#z-06">Z-06</a> 治理文档统一版本库</td><td><a href="#E-06">E-06</a> · 含 落地说明 / 通俗解释 / 名词解释</td><td>已生效 · 已部署全机</td></tr>
   </table>
 
   <h2>每条展开的组织方式 <span class="tick"></span><span class="cnt">不套模板 · 按实情写</span></h2>
@@ -91,7 +92,7 @@ tr:last-child td{border-bottom:none}
     </ul>
   </div></div>
 
-  <h2>正式展开<span class="tick"></span><span class="cnt">Z-01 · Z-02 · Z-03 · Z-04 · Z-05</span></h2>
+  <h2>正式展开<span class="tick"></span><span class="cnt">Z-01 · Z-02 · Z-03 · Z-04 · Z-05 · Z-06</span></h2>
 
   <div class="pair" id="E-01">
     <div class="phead"><span class="zid">E-01</span><b>Z-01 适用范围 · 怎么落地</b><span class="back"><a href="总则.html#z-01" style="text-decoration:none;color:inherit">◂ 返回总则</a></span></div>
@@ -266,8 +267,33 @@ tr:last-child td{border-bottom:none}
     </div>
   </div>
 
-  <h2>变更记录<span class="tick"></span><span class="cnt">v0.9 · 正式展开 5</span></h2>
-  <p class="cl">2026-09-03 · v0.3 立宪：定位为总则逐条展开、双向锚点。<br>2026-09-03 · v0.4 依会议指示：①取消固定模板，落地说明按实情自由写；②每条末尾必带「通俗解释」；③每条末尾附「名词解释」（覆盖编程与 AI 词汇，允许跨条重复）。<br>2026-09-03 · v0.5 移除演示条目，写入第一条正式展开 E-01（Z-01 适用范围）。<br>2026-09-03 · v0.6 写入第二条正式展开 E-02（Z-02 模型文件统一仓），同步索引表。<br>2026-09-04 · v0.7 写入第三条正式展开 E-03（Z-03 技能台账），同步索引表。<br>2026-09-04 · v0.8 写入第四条正式展开 E-04（Z-04 MCP 与 CLI 工具台账），同步索引表。<br>2026-09-04 · v0.9 写入第五条正式展开 E-05（Z-05 多 Agent 协作 · 全机行为默认），同步索引表。</p>
+  <div class="pair" id="E-06">
+    <div class="phead"><span class="zid">E-06</span><b>Z-06 治理文档统一版本库 · git · 怎么落地</b><span class="back"><a href="总则.html#z-06" style="text-decoration:none;color:inherit">◂ 返回总则</a></span></div>
+    <div class="pbody">
+      <div class="lbl">落地说明</div>
+      <p style="margin:2px 0 0">这条给本治理体系装上<b>git 版本库</b>：<code>E:\claude code总则</code> 全目录已纳入本机 git 版本库，主仓公开托管于 <code>github.com/nicholasleefei/claude-code-governance</code>。先立基建——本机已 <code>git init -b main</code>，作者身份 <code>nicholasleefei &lt;230030817+nicholasleefei@users.noreply.github.com&gt;</code>；本仓库已配 <code>http.proxy=127.0.0.1:10808</code> 走本机代理完成远端通信。</p>
+      <p style="margin:8px 0 0"><b>提交规矩：</b>每次书记落完定稿 / 实质修订即 <code>git add</code> + <code>commit</code> + <code>push</code>，commit 信息写清主题（哪条入宪、动了哪些台账、几号纪要）；此动作并入书记落档流程（P-8），不是可选项。</p>
+      <p style="margin:8px 0 0"><b>过程记录只增不改：</b><code>过程记录\*.md</code> 一旦写入即历史，修订以追加新纪要表达，不 retro 编辑——git 历史保证可回溯、可回滚。</p>
+      <p style="margin:8px 0 0"><b>多机只读纪律：</b>使用机 / 其它机器对主仓只 <code>git pull</code>（只读），<b>永不 push 回主仓</b>；改规则只认主仓本机。规则更新＝主仓 push 后各使用机 pull。</p>
+      <div class="lbl">通俗解释</div>
+      <div class="plain">等于给治理文档配了一台<b>带存档的时光机</b>：每次改动都照一张"快照"（commit），按主题写好标签，随时能回到任意历史版本、也能一键撤销误改。规则存进公开仓库后，别的电脑想遵守规则就 clone/pull 一份只读副本——它们只有"读"的钥匙，改规则必须回主仓这台机器来改、改完大家再 pull。就像档案室的正式档案（过程记录）只进不出、按卷号归档，不能撕了重写，只能往后加卷。</div>
+      <div class="lbl">名词解释</div>
+      <ul class="gloss">
+        <li><span class="t">git</span><span class="d">分布式版本控制系统：记录文件每次改动、支持回溯/回滚/多人协作，本体系版本库采用。</span></li>
+        <li><span class="t">仓库 / repository</span><span class="d">由 git 管理的一个项目目录及其全部提交历史；本仓即 E:\claude code总则，主仓公开托管于 GitHub。</span></li>
+        <li><span class="t">main 分支</span><span class="d">仓库默认主分支名（本仓以 <code>git init -b main</code> 建立），主仓的权威线。</span></li>
+        <li><span class="t">commit</span><span class="d">一次"存档/快照"：把当前改动连同说明信息固定进历史，形成可回溯节点。</span></li>
+        <li><span class="t">push</span><span class="d">把本机已有 commit 上传到远端主仓；只读机/使用机不做此动作。</span></li>
+        <li><span class="t">pull</span><span class="d">从远端主仓拉取最新改动到本机；使用机/其它机更新规则的唯一方式。</span></li>
+        <li><span class="t">remote</span><span class="d">仓库登记的远端地址别名（本仓 origin = github.com/nicholasleefei/claude-code-governance）。</span></li>
+        <li><span class="t">密提交</span><span class="d">提交信息与内容不含明文凭据；凭据类只以环境变量名/占位符出现（呼应 Z-09 精神）。</span></li>
+        <li><span class="t">只读使用机</span><span class="d">遵守通用规则、能读规则原文、但永不修改/永不 push 主仓的机器；改规则一律回主仓本机。</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>变更记录<span class="tick"></span><span class="cnt">v0.10 · 正式展开 6</span></h2>
+  <p class="cl">2026-09-03 · v0.3 立宪：定位为总则逐条展开、双向锚点。<br>2026-09-03 · v0.4 依会议指示：①取消固定模板，落地说明按实情自由写；②每条末尾必带「通俗解释」；③每条末尾附「名词解释」（覆盖编程与 AI 词汇，允许跨条重复）。<br>2026-09-03 · v0.5 移除演示条目，写入第一条正式展开 E-01（Z-01 适用范围）。<br>2026-09-03 · v0.6 写入第二条正式展开 E-02（Z-02 模型文件统一仓），同步索引表。<br>2026-09-04 · v0.7 写入第三条正式展开 E-03（Z-03 技能台账），同步索引表。<br>2026-09-04 · v0.8 写入第四条正式展开 E-04（Z-04 MCP 与 CLI 工具台账），同步索引表。<br>2026-09-04 · v0.9 写入第五条正式展开 E-05（Z-05 多 Agent 协作 · 全机行为默认），同步索引表。<br>2026-09-04 · v0.10 写入第六条正式展开 E-06（Z-06 治理文档统一版本库 · git），同步索引表。</p>
 </div>
 </body>
 </html>
