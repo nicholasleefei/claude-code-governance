@@ -66,7 +66,7 @@ tr:last-child td{border-bottom:none}
   </div>
   <h1>执行结构</h1>
   <p class="sub"><a href="总则.html" style="color:#bfecf4">总则</a> 每一条的展开说明：这条到底怎么落地、怎么生效。与总则<b>一一对应、双向跳转</b>。<b>落地说明按实际情况写、不套模板</b>；每条末尾必带「通俗解释」与「名词解释」两块。</p>
-  <div class="meta"><span>正式展开 6</span><span>与总则 1:1</span><span>更新 2026-09-04</span></div>
+  <div class="meta"><span>正式展开 7</span><span>与总则 1:1</span><span>更新 2026-09-04</span></div>
 </div></header>
 
 <div class="wrap">
@@ -81,6 +81,7 @@ tr:last-child td{border-bottom:none}
     <tr><td><a href="总则.html#z-04">Z-04</a> MCP 与 CLI 工具台账</td><td><a href="#E-04">E-04</a> · 含 落地说明 / 通俗解释 / 名词解释</td><td>已生效 · 已部署全机</td></tr>
     <tr><td><a href="总则.html#z-05">Z-05</a> 多 Agent 协作 · 全机行为默认</td><td><a href="#E-05">E-05</a> · 含 落地说明 / 通俗解释 / 名词解释</td><td>已生效 · 已部署全机</td></tr>
     <tr><td><a href="总则.html#z-06">Z-06</a> 治理文档统一版本库</td><td><a href="#E-06">E-06</a> · 含 落地说明 / 通俗解释 / 名词解释</td><td>已生效 · 已部署全机</td></tr>
+    <tr><td><a href="总则.html#z-07">Z-07</a> 外链巡检</td><td><a href="#E-07">E-07</a> · 含 落地说明 / 通俗解释 / 名词解释</td><td>已生效 · 已部署全机</td></tr>
   </table>
 
   <h2>每条展开的组织方式 <span class="tick"></span><span class="cnt">不套模板 · 按实情写</span></h2>
@@ -92,7 +93,7 @@ tr:last-child td{border-bottom:none}
     </ul>
   </div></div>
 
-  <h2>正式展开<span class="tick"></span><span class="cnt">Z-01 · Z-02 · Z-03 · Z-04 · Z-05 · Z-06</span></h2>
+  <h2>正式展开<span class="tick"></span><span class="cnt">Z-01 · Z-02 · Z-03 · Z-04 · Z-05 · Z-06 · Z-07</span></h2>
 
   <div class="pair" id="E-01">
     <div class="phead"><span class="zid">E-01</span><b>Z-01 适用范围 · 怎么落地</b><span class="back"><a href="总则.html#z-01" style="text-decoration:none;color:inherit">◂ 返回总则</a></span></div>
@@ -292,8 +293,32 @@ tr:last-child td{border-bottom:none}
     </div>
   </div>
 
-  <h2>变更记录<span class="tick"></span><span class="cnt">v0.10 · 正式展开 6</span></h2>
-  <p class="cl">2026-09-03 · v0.3 立宪：定位为总则逐条展开、双向锚点。<br>2026-09-03 · v0.4 依会议指示：①取消固定模板，落地说明按实情自由写；②每条末尾必带「通俗解释」；③每条末尾附「名词解释」（覆盖编程与 AI 词汇，允许跨条重复）。<br>2026-09-03 · v0.5 移除演示条目，写入第一条正式展开 E-01（Z-01 适用范围）。<br>2026-09-03 · v0.6 写入第二条正式展开 E-02（Z-02 模型文件统一仓），同步索引表。<br>2026-09-04 · v0.7 写入第三条正式展开 E-03（Z-03 技能台账），同步索引表。<br>2026-09-04 · v0.8 写入第四条正式展开 E-04（Z-04 MCP 与 CLI 工具台账），同步索引表。<br>2026-09-04 · v0.9 写入第五条正式展开 E-05（Z-05 多 Agent 协作 · 全机行为默认），同步索引表。<br>2026-09-04 · v0.10 写入第六条正式展开 E-06（Z-06 治理文档统一版本库 · git），同步索引表。</p>
+  <div class="pair" id="E-07">
+    <div class="phead"><span class="zid">E-07</span><b>Z-07 外链巡检 · 登记↔实体一致性核查 · 怎么落地</b><span class="back"><a href="总则.html#z-07" style="text-decoration:none;color:inherit">◂ 返回总则</a></span></div>
+    <div class="pbody">
+      <div class="lbl">落地说明</div>
+      <p style="margin:2px 0 0"><b>周期：</b>每周例行一次；逢大动作（安装/卸载 skill · MCP · CLI · 模型、搬盘、建仓等）另行加查。用户说<b>"外链巡检"</b>即按本清单执行。</p>
+      <p style="margin:8px 0 0"><b>执行＝按清单逐项核四本台账：</b>① <code>E:\model</code>——实际模型夹与缓存对照台账登记，多出的核实补登/收拢；② <code>E:\skill</code>——每个 skill 是否仍在其登记的生效位置；③ <code>E:\mcp</code>——注册 scope 是否仍在（可用 <code>claude mcp list</code> 核对）；④ <code>E:\cli</code>——PATH 里实体是否存在。台账条目指向的实体<b>存在且有效</b>＝健康。</p>
+      <p style="margin:8px 0 0"><b>散落归拢：</b>扫项目与用户目录，凡 <code>E:\model</code> 之外散落的大体量模型文件（.safetensors / .gguf / .bin 等）一律归拢或补登记（呼应 Z-02 巡检兜底）。</p>
+      <p style="margin:8px 0 0"><b>清理与留痕：</b>实际存在而未登记者补登；失效、停用者走流程清理并同步台账；巡检结果记入 <code>过程记录</code>（编号 YYYY-MM-DD-NN-外链巡检）。</p>
+      <div class="lbl">通俗解释</div>
+      <div class="plain">台账是<b>通讯录</b>、实体是<b>人</b>。外链巡检＝每周照通讯录<b>挨个打电话</b>，确认人还在、没换号（登记指向的实体存在且有效）；通讯录漏记的人补上去（实存未登记→补登/收拢）；已经搬走/失联的从通讯录划掉并按流程清理（失效/停用→走流程）。治的是"本子上写着有、实际却没有"或"实际有、本子上没写"的账实不符。</div>
+      <div class="lbl">名词解释</div>
+      <ul class="gloss">
+        <li><span class="t">登记↔实体</span><span class="d">台账里的一条记录（登记）与其真实指向的对象（实体，如某 skill 夹、某 CLI、某模型文件）之间的对应关系；外链巡检核的就是这条链接是否健康。</span></li>
+        <li><span class="t">台账</span><span class="d">登记处清单页（E:\model / E:\skill / E:\mcp / E:\cli 各 index.html），只记账、非实体仓。</span></li>
+        <li><span class="t">外链</span><span class="d">"登记 → 外部实体"的链接；本则叫"外链巡检"而非泛称"巡检"，点明核查对象就是这些登记链接，避免与代码巡检/安全巡检等提法撞车。</span></li>
+        <li><span class="t">生效位置</span><span class="d">实体实际被系统识别的位置（如 skill 的标准生效目录、MCP 的注册 config、CLI 的 PATH/已知路径）；脱离即失效。</span></li>
+        <li><span class="t">散落文件</span><span class="d">游离在统一仓（E:\model）之外的大体量模型文件，巡检发现即归拢或补登记。</span></li>
+        <li><span class="t">停用项</span><span class="d">不再使用但尚未删除的登记/实体；巡检确认无影响后走流程清理或改状态。</span></li>
+        <li><span class="t">走流程</span><span class="d">按既有规则处置：登记类更新台账、实体类按工具官方通道卸载/清理，不蛮删。</span></li>
+        <li><span class="t">触发词</span><span class="d">用户说"外链巡检"即触发按本清单执行；巡检结果以 过程记录 YYYY-MM-DD-NN-外链巡检 归档。</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>变更记录<span class="tick"></span><span class="cnt">v0.11 · 正式展开 7</span></h2>
+  <p class="cl">2026-09-03 · v0.3 立宪：定位为总则逐条展开、双向锚点。<br>2026-09-03 · v0.4 依会议指示：①取消固定模板，落地说明按实情自由写；②每条末尾必带「通俗解释」；③每条末尾附「名词解释」（覆盖编程与 AI 词汇，允许跨条重复）。<br>2026-09-03 · v0.5 移除演示条目，写入第一条正式展开 E-01（Z-01 适用范围）。<br>2026-09-03 · v0.6 写入第二条正式展开 E-02（Z-02 模型文件统一仓），同步索引表。<br>2026-09-04 · v0.7 写入第三条正式展开 E-03（Z-03 技能台账），同步索引表。<br>2026-09-04 · v0.8 写入第四条正式展开 E-04（Z-04 MCP 与 CLI 工具台账），同步索引表。<br>2026-09-04 · v0.9 写入第五条正式展开 E-05（Z-05 多 Agent 协作 · 全机行为默认），同步索引表。<br>2026-09-04 · v0.10 写入第六条正式展开 E-06（Z-06 治理文档统一版本库 · git），同步索引表。<br>2026-09-04 · v0.11 写入第七条正式展开 E-07（Z-07 外链巡检 · 登记↔实体一致性核查），同步索引表。</p>
 </div>
 </body>
 </html>
