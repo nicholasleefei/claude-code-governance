@@ -66,7 +66,7 @@ tr:last-child td{border-bottom:none}
   </div>
   <h1>执行结构</h1>
   <p class="sub"><a href="总则.html" style="color:#bfecf4">总则</a> 每一条的展开说明：这条到底怎么落地、怎么生效。与总则<b>一一对应、双向跳转</b>。<b>落地说明按实际情况写、不套模板</b>；每条末尾必带「通俗解释」与「名词解释」两块。</p>
-  <div class="meta"><span>正式展开 8</span><span>与总则 1:1</span><span>更新 2026-09-04</span></div>
+  <div class="meta"><span>正式展开 9</span><span>与总则 1:1</span><span>更新 2026-09-04</span></div>
 </div></header>
 
 <div class="wrap">
@@ -83,6 +83,7 @@ tr:last-child td{border-bottom:none}
     <tr><td><a href="总则.html#z-06">Z-06</a> 治理文档统一版本库</td><td><a href="#E-06">E-06</a> · 含 落地说明 / 通俗解释 / 名词解释</td><td>已生效 · 已部署全机</td></tr>
     <tr><td><a href="总则.html#z-07">Z-07</a> 外链巡检</td><td><a href="#E-07">E-07</a> · 含 落地说明 / 通俗解释 / 名词解释</td><td>已生效 · 已部署全机</td></tr>
     <tr><td><a href="总则.html#z-08">Z-08</a> 纪要即记忆 · 跨会话续作</td><td><a href="#E-08">E-08</a> · 含 落地说明 / 通俗解释 / 名词解释</td><td>已生效 · 已部署全机</td></tr>
+    <tr><td><a href="总则.html#z-10">Z-10</a> 治理体系多机部署</td><td><a href="#E-10">E-10</a> · 含 落地说明 / 通俗解释 / 名词解释</td><td>已生效 · 主控机已部署 · 使用机待试点</td></tr>
   </table>
 
   <h2>每条展开的组织方式 <span class="tick"></span><span class="cnt">不套模板 · 按实情写</span></h2>
@@ -94,7 +95,7 @@ tr:last-child td{border-bottom:none}
     </ul>
   </div></div>
 
-  <h2>正式展开<span class="tick"></span><span class="cnt">Z-01 · Z-02 · Z-03 · Z-04 · Z-05 · Z-06 · Z-07 · Z-08</span></h2>
+  <h2>正式展开<span class="tick"></span><span class="cnt">Z-01 · Z-02 · Z-03 · Z-04 · Z-05 · Z-06 · Z-07 · Z-08 · Z-10</span></h2>
 
   <div class="pair" id="E-01">
     <div class="phead"><span class="zid">E-01</span><b>Z-01 适用范围 · 怎么落地</b><span class="back"><a href="总则.html#z-01" style="text-decoration:none;color:inherit">◂ 返回总则</a></span></div>
@@ -341,8 +342,33 @@ tr:last-child td{border-bottom:none}
     </div>
   </div>
 
-  <h2>变更记录<span class="tick"></span><span class="cnt">v0.12 · 正式展开 8</span></h2>
-  <p class="cl">2026-09-03 · v0.3 立宪：定位为总则逐条展开、双向锚点。<br>2026-09-03 · v0.4 依会议指示：①取消固定模板，落地说明按实情自由写；②每条末尾必带「通俗解释」；③每条末尾附「名词解释」（覆盖编程与 AI 词汇，允许跨条重复）。<br>2026-09-03 · v0.5 移除演示条目，写入第一条正式展开 E-01（Z-01 适用范围）。<br>2026-09-03 · v0.6 写入第二条正式展开 E-02（Z-02 模型文件统一仓），同步索引表。<br>2026-09-04 · v0.7 写入第三条正式展开 E-03（Z-03 技能台账），同步索引表。<br>2026-09-04 · v0.8 写入第四条正式展开 E-04（Z-04 MCP 与 CLI 工具台账），同步索引表。<br>2026-09-04 · v0.9 写入第五条正式展开 E-05（Z-05 多 Agent 协作 · 全机行为默认），同步索引表。<br>2026-09-04 · v0.10 写入第六条正式展开 E-06（Z-06 治理文档统一版本库 · git），同步索引表。<br>2026-09-04 · v0.11 写入第七条正式展开 E-07（Z-07 外链巡检 · 登记↔实体一致性核查），同步索引表。<br>2026-09-04 · v0.12 写入第八条正式展开 E-08（Z-08 纪要即记忆 · 跨会话续作），同步索引表。</p>
+  <div class="pair" id="E-10">
+    <div class="phead"><span class="zid">E-10</span><b>Z-10 治理体系多机部署 · 主仓权威 · 使用机只读 · 怎么落地</b><span class="back"><a href="总则.html#z-10" style="text-decoration:none;color:inherit">◂ 返回总则</a></span></div>
+    <div class="pbody">
+      <div class="lbl">落地说明</div>
+      <p style="margin:2px 0 0">这条把治理体系铺到多台电脑，确立「<b>主控机权威 · 使用机只读</b>」的部署模型。</p>
+      <p style="margin:8px 0 0"><b>部署模型：</b>主控机＝本机（规则主仓所在，唯一写者；P-8 收尾即密提交 push）。使用机＝其它电脑（匿名 https clone 公开仓——无凭据即无写权限，物理只读，永不 commit/push）。</p>
+      <p style="margin:8px 0 0"><b>装机五步</b>见装机提示词 TXT：clone → 问本机三事 → 编译本机 CLAUDE.md（通用层照抄 + 本机存储层按该机实际盘符）→ 按需装工具菜单 → 更新与收尾（git pull、凭据纪律、新会话生效）。</p>
+      <p style="margin:8px 0 0"><b>规则更新：</b>＝使用机 <code>git pull</code> + 必要时重编译镜像；改规则只回主控机。<b>备注：</b>讨论可在任意机进行，落定案只在主控机。</p>
+      <div class="lbl">通俗解释</div>
+      <div class="plain">主仓＝宪法正本，存总部（主控机），唯一能改字；使用机＝分部人手一册复印件，只等总部发新版（git pull），分部装什么工具自己定。</div>
+      <div class="lbl">名词解释</div>
+      <ul class="gloss">
+        <li><span class="t">主控机</span><span class="d">规则主仓所在的那台电脑＝本机；唯一写者，规则修订/定案只在这台机上落。</span></li>
+        <li><span class="t">使用机</span><span class="d">遵守通用总则、能读规则与纪要原文、但不改规则不 push 主仓的其它电脑。</span></li>
+        <li><span class="t">主仓</span><span class="d">规则权威版本库；公开托管于 <code>github.com/nicholasleefei/claude-code-governance</code>，只有主控机可写。</span></li>
+        <li><span class="t">镜像</span><span class="d">把主仓总则编译成本机的 CLAUDE.md；通用规则照抄，本机落点按该机实际适配，是只读副本。</span></li>
+        <li><span class="t">编译</span><span class="d">读主仓 总则.html 结论板，按「通用层照抄/存储层按机适配」加工成本机 CLAUDE.md 的过程。</span></li>
+        <li><span class="t">匿名 clone</span><span class="d">公开仓无需账号凭据即可 git clone / pull；无凭据即天然无写权限，从机制上保证只读。</span></li>
+        <li><span class="t">只读</span><span class="d">使用机对主仓只有读取权：只能 clone/pull，永不 commit/push；改规则一律回主控机。</span></li>
+        <li><span class="t">装机提示词</span><span class="d">随仓分发的《总则安装提示词》TXT，指导使用机按五步完成装机与镜像编译。</span></li>
+        <li><span class="t">按需安装</span><span class="d">skill/model/MCP/CLI 不随仓镜像；各使用机从主仓台账菜单里挑自己需要的装，绝不默认全装。</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>变更记录<span class="tick"></span><span class="cnt">v0.13 · 正式展开 9</span></h2>
+  <p class="cl">2026-09-03 · v0.3 立宪：定位为总则逐条展开、双向锚点。<br>2026-09-03 · v0.4 依会议指示：①取消固定模板，落地说明按实情自由写；②每条末尾必带「通俗解释」；③每条末尾附「名词解释」（覆盖编程与 AI 词汇，允许跨条重复）。<br>2026-09-03 · v0.5 移除演示条目，写入第一条正式展开 E-01（Z-01 适用范围）。<br>2026-09-03 · v0.6 写入第二条正式展开 E-02（Z-02 模型文件统一仓），同步索引表。<br>2026-09-04 · v0.7 写入第三条正式展开 E-03（Z-03 技能台账），同步索引表。<br>2026-09-04 · v0.8 写入第四条正式展开 E-04（Z-04 MCP 与 CLI 工具台账），同步索引表。<br>2026-09-04 · v0.9 写入第五条正式展开 E-05（Z-05 多 Agent 协作 · 全机行为默认），同步索引表。<br>2026-09-04 · v0.10 写入第六条正式展开 E-06（Z-06 治理文档统一版本库 · git），同步索引表。<br>2026-09-04 · v0.11 写入第七条正式展开 E-07（Z-07 外链巡检 · 登记↔实体一致性核查），同步索引表。<br>2026-09-04 · v0.12 写入第八条正式展开 E-08（Z-08 纪要即记忆 · 跨会话续作），同步索引表。<br>2026-09-04 · v0.13 写入正式展开 E-10（Z-10 治理体系多机部署 · 主仓权威 · 使用机只读），同步索引表（Z-09 暂缺待 T-09）。</p>
 </div>
 </body>
 </html>
