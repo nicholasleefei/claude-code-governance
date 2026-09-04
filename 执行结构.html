@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>执行结构 · Claude Code 总则工作区</title>
+<style>
+:root{--bg:#eef2f5;--panel:#fff;--ink:#1b2430;--ink-soft:#38444f;--sub:#54606c;--line:#e2e8ee;--ac:#0891b2;--ac-soft:#e0f5fa;--amber:#b45309;--amber-soft:#fdf3de;--ok-soft:#e7f6ec;--mono:"Cascadia Code",Consolas,monospace}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Segoe UI","Microsoft YaHei UI","Microsoft YaHei","PingFang SC",system-ui,sans-serif;font-size:15px;line-height:1.75;color:var(--ink);background:var(--bg)}
+a{color:#0e7490}a:hover{color:#155e75}
+code{font-family:var(--mono);font-size:13px;background:#eff3f6;border:1px solid #e0e8ed;padding:1px 6px;border-radius:6px;color:#1f4a57}
+.hero{background:linear-gradient(135deg,#0c1a24 0%,#0a3b4a 55%,#0891b2 160%);color:#fff}
+.hero-in{max-width:1080px;margin:0 auto;padding:14px 24px 26px}
+.hrow{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.brand{font-size:13px;font-weight:600;letter-spacing:.5px;color:#c2e7f0}
+.brand b{color:#fff}.brand span{opacity:.7}
+.pills{display:flex;gap:6px;flex-wrap:wrap}
+.pills a{color:#d3eef5;text-decoration:none;font-size:13.5px;padding:6px 15px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06)}
+.pills a:hover{background:rgba(255,255,255,.16)}
+.pills a[aria-current]{background:#fff;color:#0e7490;font-weight:700;border-color:#fff}
+.hero h1{margin:22px 0 4px;font-size:32px;line-height:1.25;letter-spacing:1px}
+.hero .sub{color:#d3edf3;font-size:14.5px;margin:0;max-width:84ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.meta span{font-size:12.5px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);padding:3px 11px;border-radius:999px;color:#dff2f7}
+.wrap{max-width:1080px;margin:0 auto;padding:24px 24px 80px}
+h2{display:flex;align-items:center;gap:10px;font-size:20px;margin:34px 0 10px;letter-spacing:.5px}
+h2 .tick{width:6px;height:22px;border-radius:3px;background:linear-gradient(180deg,#22d3ee,#0891b2)}
+h2 .cnt{margin-left:auto;font-size:12px;color:var(--sub);background:#e9f0f2;border:1px solid var(--line);padding:2px 10px;border-radius:999px;font-weight:600}
+.info{background:var(--ac-soft);border:1px solid #c9e8f0;border-left:6px solid var(--ac);border-radius:12px;padding:13px 18px;font-size:14px;color:#1f4a57;margin:8px 0;line-height:1.85}
+table{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:13.5px;margin:10px 0}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f0f7f8;font-weight:700;color:#1e4c55}
+tr:last-child td{border-bottom:none}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:12px 0;box-shadow:0 2px 8px rgba(15,23,42,.05)}
+.card .band{height:5px}
+.card-in{padding:16px 22px 14px}
+.pair{border:1px solid #d5e7eb;border-left:6px solid var(--ac);border-radius:16px;margin:14px 0;background:#fcfdfe;overflow:hidden}
+.pair .phead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#f0f7f8;padding:10px 16px;border-bottom:1px solid #e2edf0}
+.pair .zid{font-family:var(--mono);font-size:12px;background:var(--ac-soft);color:#0e7490;font-weight:700;padding:2px 8px;border-radius:6px}
+.pair b{font-size:14.5px}
+.pair .pbody{padding:14px 18px}
+.lbl{font-size:12px;font-weight:800;letter-spacing:1.5px;color:#0e7490;margin:12px 0 6px;display:flex;align-items:center;gap:8px}
+.lbl::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--ac)}
+.plain{background:var(--ok-soft);border:1px solid #cfe8d8;border-radius:12px;padding:11px 15px;font-size:14px;margin:4px 0}
+.plain::before{content:"讲人话 · ";font-weight:700;color:#15803d}
+.gloss{list-style:none;margin:4px 0;padding:0;display:grid;gap:5px}
+.gloss li{font-size:13.5px;border:1px solid var(--line);border-radius:9px;padding:6px 11px;background:#fff;display:flex;gap:10px}
+.gloss .t{flex:0 0 170px;font-family:var(--mono);font-weight:700;color:#1f4a57}
+.gloss .d{flex:1;color:var(--ink-soft)}
+.back{font-size:12px;font-weight:600;color:#0e7490;text-decoration:none;border:1px solid var(--ac);border-radius:999px;padding:2px 10px;background:#fff;white-space:nowrap;margin-left:auto}
+.back:hover{background:var(--ac);color:#fff}
+.kv{list-style:none;margin:4px 0 0;padding:0}
+.kv li{display:flex;gap:12px;padding:6px 0;border-top:1px dashed var(--line);font-size:14px}
+.kv li:first-child{border-top:none}
+.kv .k{flex:0 0 66px;font-size:12px;color:var(--sub);padding-top:2px}
+.kv .v{flex:1}
+.cl{margin:3px 0;font-size:14px;color:var(--sub)}
+</style>
+</head>
+<body>
+<header class="hero"><div class="hero-in">
+  <div class="hrow">
+    <div class="brand"><b>Claude Code · 总则工作区</b> <span>/ E:\claude code总则</span></div>
+    <nav class="pills"><a href="会议章程.html">会议章程</a><a href="草案.html">草案</a><a href="总则.html">总则</a><a href="执行结构.html" aria-current="true">执行结构</a></nav>
+  </div>
+  <h1>执行结构</h1>
+  <p class="sub"><a href="总则.html" style="color:#bfecf4">总则</a> 每一条的展开说明：这条到底怎么落地、怎么生效。与总则<b>一一对应、双向跳转</b>。<b>落地说明按实际情况写、不套模板</b>；每条末尾必带「通俗解释」与「名词解释」两块。</p>
+  <div class="meta"><span>正式展开 5</span><span>与总则 1:1</span><span>更新 2026-09-04</span></div>
+</div></header>
+
+<div class="wrap">
+  <div class="info"><b>对应关系：</b>总则.html 写结论，本页写同一条的「怎么落地」。同一标识双向锚点互跳——结论卡 [执行详解 ▸] 跳来这里，这里的 [◂ 返回总则] 跳回原条。本页随总则同生同灭。</div>
+
+  <h2>索引表 <span class="tick"></span><span class="cnt">随总则自动增长</span></h2>
+  <table>
+    <tr><th style="width:22%">总则条目</th><th>对应执行展开</th><th style="width:16%">状态</th></tr>
+    <tr><td><a href="总则.html#z-01">Z-01</a> 适用范围</td><td><a href="#E-01">E-01</a> · 含 落地说明 / 通俗解释 / 名词解释</td><td>已生效 · 已部署全机</td></tr>
+    <tr><td><a href="总则.html#z-02">Z-02</a> 模型文件统一仓</td><td><a href="#E-02">E-02</a> · 含 落地说明 / 通俗解释 / 名词解释</td><td>已生效 · 条文已部署（环境变量待批）</td></tr>
+    <tr><td><a href="总则.html#z-03">Z-03</a> 技能台账</td><td><a href="#E-03">E-03</a> · 含 落地说明 / 通俗解释 / 名词解释</td><td>已生效 · 已部署全机</td></tr>
+    <tr><td><a href="总则.html#z-04">Z-04</a> MCP 与 CLI 工具台账</td><td><a href="#E-04">E-04</a> · 含 落地说明 / 通俗解释 / 名词解释</td><td>已生效 · 已部署全机</td></tr>
+    <tr><td><a href="总则.html#z-05">Z-05</a> 多 Agent 协作 · 全机行为默认</td><td><a href="#E-05">E-05</a> · 含 落地说明 / 通俗解释 / 名词解释</td><td>已生效 · 已部署全机</td></tr>
+  </table>
+
+  <h2>每条展开的组织方式 <span class="tick"></span><span class="cnt">不套模板 · 按实情写</span></h2>
+  <div class="card"><div class="band" style="background:#0891b2"></div><div class="card-in">
+    <ul class="kv">
+      <li><span class="k">落地说明</span><span class="v">按这条的实际情况自由写：它是什么性质、怎么执行、走哪条通道、影响谁、边界与例外。有多说多，无话则短，<b>不强制固定字段</b>。</span></li>
+      <li><span class="k">通俗解释</span><span class="v">用生活化语言讲「这条到底在干嘛」，让不熟悉技术的人也能看懂。每条都写。</span></li>
+      <li><span class="k">名词解释</span><span class="v">本条出现过/涉及到的<b>编程与 AI 相关词汇</b>，逐词一句话解释。<b>与其他条重复没关系</b>——保证单看一条就能读懂，不用回跳别处查。</span></li>
+    </ul>
+  </div></div>
+
+  <h2>正式展开<span class="tick"></span><span class="cnt">Z-01 · Z-02 · Z-03 · Z-04 · Z-05</span></h2>
+
+  <div class="pair" id="E-01">
+    <div class="phead"><span class="zid">E-01</span><b>Z-01 适用范围 · 怎么落地</b><span class="back"><a href="总则.html#z-01" style="text-decoration:none;color:inherit">◂ 返回总则</a></span></div>
+    <div class="pbody">
+      <div class="lbl">落地说明</div>
+      <p style="margin:2px 0 0">这条是效力条款兼部署条款——它本身规定「这套总则管到哪儿」，所以它的落地说明就是部署方案。</p>
+      <p style="margin:8px 0 0"><b>怎么做到全机生效：</b>获准后由总则书记把本条条文镜像到用户级文件 <code>C:\Users\pc\.claude\CLAUDE.md</code>。该文件在本机<b>每次会话、任意目录</b>启动时自动全文加载，因此总则一到那里，就等于对全机所有会话生效。今后每新批一条，都沿同一条通道追加镜像（软规则）或写入 <code>settings.json</code>（红线）。<code>总则.html</code> 是唯一权威人读稿，全局文件只是它的执行副本——只由会议侧单向写入、不手改，防止两处跑偏。</p>
+      <p style="margin:8px 0 0"><b>效力边界＝配置可被读取的边界：</b>本机 CLI／桌面端会话读取本机用户级配置 → 在适用内；claude.ai 网页端运行在云端、读不到本机配置 → 够不着、不在适用内；换一台电脑或换一个账号需各自部署；若将来本机接入企业托管策略层，个人配置让位于托管策略。</p>
+      <p style="margin:8px 0 0"><b>优先级（冲突时谁说了算，自高而低）：</b>当次会话用户的临时指令 ＞ 红线条款（系统层 deny，不因项目豁免）＞ 项目级规则（在具体项目里可覆盖总则软规则）＞ 总则软规则（默认基线）。</p>
+      <p style="margin:8px 0 0"><b>校验：</b>任选一个与本文无关的文件夹新开会话，用 <code>/context</code> 查看是否已加载到该全局文件；<code>/status</code> 查看设置来源。</p>
+      <div class="lbl">通俗解释</div>
+      <div class="plain">把总则比作公司《员工手册》。它不塞进每个人的抽屉，而是贴在<b>公司门口告示栏</b>（用户级配置）——不管你在哪个办公室（哪个项目文件夹）上班，进门都得先看到，所以全公司都适用。范围就到这块告示栏能被人看到的地方为止：别的城市的兄弟公司（别的电脑）看不到、临时在云端远程办公的人（网页端）也看不到，那就管不着。手册还写清了规矩的优先级：<b>你当场说的话最管用 → 绝对红线（谁也不许破）→ 各办公室自己的补充规定 → 手册里的通用条款（兜底）</b>。</div>
+      <div class="lbl">名词解释</div>
+      <ul class="gloss">
+        <li><span class="t">Claude Code</span><span class="d">Anthropic 的编程 AI 助手，在本机以命令行 / 桌面端运行，可读写你的项目文件。</span></li>
+        <li><span class="t">会话（session）</span><span class="d">一次 Claude Code 对话从启动到结束的运行实例。</span></li>
+        <li><span class="t">CLI</span><span class="d">命令行界面（Command-Line Interface），Claude Code 最常用的运行形态。</span></li>
+        <li><span class="t">桌面端</span><span class="d">Claude Code 的本地桌面应用形态，与 CLI 一样读取本机用户级配置。</span></li>
+        <li><span class="t">claude.ai 网页端</span><span class="d">Claude 的云端网页版聊天，运行在云端服务器，读不到你这台电脑上的配置文件。</span></li>
+        <li><span class="t">CLAUDE.md</span><span class="d">Claude 的规则文件，会话启动时自动读取；放在「用户级」即成为对本机所有项目生效的规则。</span></li>
+        <li><span class="t">用户级配置 / 用户级文件</span><span class="d">位于 C:\Users\pc\.claude\ 的配置区，只属于这台电脑、这个账号，与具体项目无关。</span></li>
+        <li><span class="t">镜像部署</span><span class="d">把权威内容同步成一份执行副本；此处指 总则.html → 用户级 CLAUDE.md 的单向同步。</span></li>
+        <li><span class="t">单向写入</span><span class="d">只允许权威侧（工作区）改动执行副本，副本不许手改，防止两处不一致。</span></li>
+        <li><span class="t">settings.json</span><span class="d">Claude 的配置文件，可设置权限（allow / ask / deny）与钩子，属系统强制层。</span></li>
+        <li><span class="t">红线 / 硬约束</span><span class="d">由系统层强制执行的禁令（如 deny），不依赖模型自觉遵守。</span></li>
+        <li><span class="t">deny</span><span class="d">权限配置里的「一律禁止」。</span></li>
+        <li><span class="t">基线规则</span><span class="d">兜底默认条款；被更具体、更贴近现场的规则覆盖时让位。</span></li>
+        <li><span class="t">项目级规则</span><span class="d">项目文件夹内的 CLAUDE.md；比用户级更贴近该项目，软规则冲突时在项目内优先。</span></li>
+        <li><span class="t">覆盖 / 优先级</span><span class="d">两条规则冲突时，按「谁更贴近现场 / 谁更强制」决定谁生效的裁决顺序。</span></li>
+        <li><span class="t">企业托管策略</span><span class="d">由组织统一下发的配置层，高于个人配置；当前环境未接入。</span></li>
+        <li><span class="t">/context</span><span class="d">会话内命令：查看当前会话实际加载了哪些规则文件，用于「查岗」验证规则是否真生效。</span></li>
+        <li><span class="t">/status</span><span class="d">会话内命令：显示当前生效的设置及其来源。</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="pair" id="E-02">
+    <div class="phead"><span class="zid">E-02</span><b>Z-02 模型文件统一仓 · 怎么落地</b><span class="back"><a href="总则.html#z-02" style="text-decoration:none;color:inherit">◂ 返回总则</a></span></div>
+    <div class="pbody">
+      <div class="lbl">落地说明</div>
+      <p style="margin:2px 0 0">这条属于「文件与存储」的软规则约定——它不拦危险动作，而是规定 Claude 在本机任意项目里处理模型文件时的<b>默认落点与登记方式</b>，目标是杜绝重复下载、误入版本库、散落各处。</p>
+      <p style="margin:8px 0 0"><b>落点约定：</b>Claude 下载或保存模型时，默认写 <code>E:\model\</code>，不落入项目目录；需要某模型时先查 <code>E:\model\</code> 根目录的 <code>index.html</code> 台账（或扫描各夹）是否已有，已有则直接以<b>绝对路径</b>引用、不重复下载。</p>
+      <p style="margin:8px 0 0"><b>结构与命名：</b>一模型一夹；夹名＝<code>编号-模型名@版本</code>（编号由台账顺延分配，<b>只增不重、删除不回收</b>，避免旧引用错位）。每夹内 <code>index.html</code>＝该模型说明书（名称／来源／参数规模／格式／许可／校验和／加载示例），供人工查找与记录。E:\model 根目录 <code>index.html</code>＝总台账（编号登记与查找入口）。</p>
+      <p style="margin:8px 0 0"><b>工具缓存：</b>Hugging Face、Ollama、LM Studio 等工具自行下载时，缓存是<b>哈希散装结构</b>，无法强行拆成一模型一夹；通过环境变量把缓存根指到 <code>E:\model\_cache\&lt;工具&gt;\</code> 物理归拢即可（如 <code>HF_HOME</code>、<code>OLLAMA_MODELS</code>、<code>XDG_CACHE_HOME</code>；属系统级变更，另行清单批准后生效，本机默认值见待批清单）。</p>
+      <p style="margin:8px 0 0"><b>例外与兜底：</b>项目内联调<b>必需</b>的小模型可暂放 <code>&lt;项目&gt;\models\</code>，但须在台账登记、并用 <code>.gitignore</code> 排除（防误入版本库）；定期巡检项目与用户目录，凡发现 <code>E:\model</code> 之外的大体量模型文件（<code>.safetensors</code>／<code>.gguf</code>／<code>.bin</code> 等）即「漏网」，一律归拢或登记。</p>
+      <p style="margin:8px 0 0"><b>边界：</b>仅约束本机（E 盘为本机专用约定，随 Z-01 范围生效）；不约束云服务托管的模型。</p>
+      <div class="lbl">通俗解释</div>
+      <div class="plain">把模型想成工具箱里的电钻：<b>不再每个工地（项目）各买一把</b>（各下载一份），而是全公司统一放一个工具间（<code>E:\model</code>），每把钻有编号和登记牌（编号＋<code>index.html</code>）——要用就去工具间借（先查台账，有就复用），买新的按编号入库。工具自己下载的散件（HF/Ollama 缓存）虽然拆不成一箱一箱，也统一堆进工具间的杂物仓（<code>_cache</code>），免得散落工地。哪个工地临时非要在现场放一把小工具（项目内小模型），可以，但要在登记本记一笔、并保证不会混进资料袋被带走（<code>.gitignore</code>）。隔段时间巡一遍所有工地，凡发现落单的钻（不在 E:\model 里的大模型文件），就归库或登记。</div>
+      <div class="lbl">名词解释</div>
+      <ul class="gloss">
+        <li><span class="t">模型文件 / 权重</span><span class="d">训练好的 AI 模型本体，常为数百 MB～数十 GB 的大文件（.safetensors/.gguf/.bin/.pt 等）。</span></li>
+        <li><span class="t">落点</span><span class="d">程序把下载或保存内容写进磁盘的具体路径。</span></li>
+        <li><span class="t">E:\model\</span><span class="d">本规则约定的全机模型统一仓（根目录）。</span></li>
+        <li><span class="t">一模型一夹</span><span class="d">每个模型独占一个独立文件夹的整理方式。</span></li>
+        <li><span class="t">台账 / index.html</span><span class="d">登记与查找用的清单文件；E:\model\index.html 是总台账，每模型夹内另有该模型的说明书页。</span></li>
+        <li><span class="t">编号</span><span class="d">给每个模型分配的稳定序号（M-001…），用于查找定位；只增不重、删除不回收。</span></li>
+        <li><span class="t">绝对路径</span><span class="d">从盘符写起的完整路径（如 E:\model\M-001\…），与"当前目录在哪"无关，任意项目都能引用。</span></li>
+        <li><span class="t">工具缓存 / 缓存</span><span class="d">软件把下载内容暂存以待复用的目录；HF/Ollama 等工具的缓存为哈希散装结构，布局由工具自己管理。</span></li>
+        <li><span class="t">Hugging Face</span><span class="d">最大的开源模型托管平台；下载缓存可用 HF_HOME 重定向。</span></li>
+        <li><span class="t">Ollama</span><span class="d">本地运行大模型的常用工具；模型目录可由 OLLAMA_MODELS 指定。</span></li>
+        <li><span class="t">LM Studio</span><span class="d">本地图形化运行模型的工具。</span></li>
+        <li><span class="t">环境变量</span><span class="d">操作系统级的全局设置项，程序启动时读取；如 HF_HOME、OLLAMA_MODELS、XDG_CACHE_HOME。</span></li>
+        <li><span class="t">XDG_CACHE_HOME</span><span class="d">一个通用缓存根环境变量，很多工具会兜底读取。</span></li>
+        <li><span class="t">.gitignore</span><span class="d">版本库忽略清单；列出的路径不会被 git 提交。</span></li>
+        <li><span class="t">版本库 / git</span><span class="d">代码版本管理工具；模型大文件应避免进入其中。</span></li>
+        <li><span class="t">校验和</span><span class="d">对文件内容算出的指纹，用于核对下载文件是否完整、未损坏。</span></li>
+        <li><span class="t">巡检</span><span class="d">定期扫描、把 E:\model 之外的大体量模型文件归拢或登记，治"遗漏"。</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="pair" id="E-03">
+    <div class="phead"><span class="zid">E-03</span><b>Z-03 技能台账 · 怎么落地</b><span class="back"><a href="总则.html#z-03" style="text-decoration:none;color:inherit">◂ 返回总则</a></span></div>
+    <div class="pbody">
+      <div class="lbl">落地说明</div>
+      <p style="margin:2px 0 0">这条属于「文件与存储」的<b>登记制软规则</b>：与 Z-02 模型仓「把实体统一搬进 E:\model」相反，skill 是<b>实体不动、只做登记</b>。</p>
+      <p style="margin:8px 0 0"><b>实体不强搬不强拆：</b>skill 不强搬、不拆散、不做目录联接，各自待在<b>标准生效位置</b>原样运行——用户级 <code>~/.claude/skills</code>、项目级 <code>.claude/skills</code>、插件内自带目录。一个 skill 能否被 Claude Code 识别，取决于它是否待在会去扫描的固定位置；搬走、或为了「入库」复制一份到台账，反而会让它失效。因此 <code>E:\skill\index.html</code> <b>只是台账登记处、不是实体仓</b>。</p>
+      <p style="margin:8px 0 0"><b>台账字段：</b>每条记 <code>S 编号</code>／名称／类型（<code>外部下载部署</code>｜<code>自写沉淀</code>）／安装或沉淀日期／位置（<b>完整路径</b>，并注明所属 用户级/项目级/插件）／能力一句话／来源／状态（<code>在编</code>｜<code>停用（可删）</code>｜<code>待测</code>）／备注。编号 <code>S-001</code> 起顺延分配、<b>只增不复用</b>；与 Z-02 的模型 M 号相互独立、各排各的。</p>
+      <p style="margin:8px 0 0"><b>登记口径：</b>外部下载部署的记<b>来源</b>（仓库／作者）与<b>安装日期</b>；自写沉淀的记「自写沉淀 · 日期」。某 skill 究竟能干什么，<b>以它所在目录原生的 <code>SKILL.md</code> 为准</b>——台账只作一行索引、不另抄能力全文，避免两处说法漂移。</p>
+      <p style="margin:8px 0 0"><b>停用与删除：</b>停用<b>不删夹</b>，只把状态改为「停用（可删）」；删除前先翻台账「位置」列确认影响面。尤其<b>工具托管类</b> skill（如 <code>@tts-open-toolkit/cli</code> 托管的 <code>tts-*</code> 系列，本体由该工具统一管理），应走该工具 CLI 的<b>管理命令</b>卸载／升级，<b>勿手工删目录</b>——否则工具下次运行可能按清单补回、或留下指向已删实体的坏引用。</p>
+      <p style="margin:8px 0 0"><b>巡检补登记：</b>定期扫描 <code>~/.claude/skills</code> 等标准生效位置，凡发现未登记的 skill（新装或漏记）即按上述字段补记；反向核对台账里「实体已不在」的条目，把状态改为「停用（可删）」。</p>
+      <div class="lbl">通俗解释</div>
+      <div class="plain">Z-02 收模型，是把实物统一搬进大仓库（<code>E:\model</code>），一台一格、编号上架。skill 不一样——它更像一台台<b>各有专用电源插座的家电</b>：洗衣机必须插在阳台那个专用插座上才转得起来，你不能嫌它占地就把它硬搬到楼道里，也不能剪了插头重新接线。所以这条的规矩是：<b>电器原样待在各自该待的插座上</b>（用户级 / 项目级 / 插件三个标准位置），不搬不拆；只在小区门口物业台放一本登记本（<code>E:\skill</code> 台账），记「几号楼几户装了台洗衣机、何时装的、干什么用、哪买的、出问题找谁」。想找某个技能，翻登记本就知道它在哪个插座上、怎么用；想拆、想升级，也先翻登记本看它接的什么线——尤其那种整栋楼统一供水供电的（工具托管类），要让物业按规程断电（走工具 CLI 的管理命令），别自己上手剪管子。</div>
+      <div class="lbl">名词解释</div>
+      <ul class="gloss">
+        <li><span class="t">skill（技能）</span><span class="d">Claude Code 的可复用能力包：一个目录，内含 SKILL.md 说明与可选资源，放进标准位置后被 Claude 按需加载。</span></li>
+        <li><span class="t">SKILL.md</span><span class="d">skill 目录内的说明文件，是「这个技能干什么、怎么用」的权威定义，Claude 据此决定何时调用。</span></li>
+        <li><span class="t">user-invocable</span><span class="d">SKILL.md 里的可选设置；标了它，用户可手动点名调用该技能（如 /技能名），而不只靠 Claude 自主触发。</span></li>
+        <li><span class="t">目录</span><span class="d">文件夹。skill 以一个目录为单位存在，目录里装着说明与所需文件。</span></li>
+        <li><span class="t">路径</span><span class="d">定位文件位置的一串地址：绝对路径从盘符写起（如 C:\Users\pc\.claude\skills\…），与当前在哪无关；相对路径从当前所在目录算起。</span></li>
+        <li><span class="t">用户级 ~/.claude/skills</span><span class="d">全机、本账号通用的技能目录（~＝用户主目录 C:\Users\pc）；装在这里任何项目都能用。</span></li>
+        <li><span class="t">项目级 .claude/skills</span><span class="d">项目文件夹内的技能目录，只在该项目里生效、随项目走。</span></li>
+        <li><span class="t">插件（plugin）</span><span class="d">扩展包分发形态，可自带 skills；其技能由插件目录托管，也是「标准生效位置」之一。</span></li>
+        <li><span class="t">index.html</span><span class="d">目录的清单／说明网页；E:\skill\index.html 是技能台账总页（Z-02 的 E:\model 也用同名文件作台账）。</span></li>
+        <li><span class="t">台账</span><span class="d">只作「登记、索引、查找」用的清单，不存实体——与「实体仓」相对。</span></li>
+        <li><span class="t">编号（S 号）</span><span class="d">技能在台账里的稳定序号 S-001…，顺延分配、只增不复用；与 Z-02 的 M 号是两套独立编号。</span></li>
+        <li><span class="t">工具托管类 skill</span><span class="d">由某工具／CLI 统一安装、升级、卸载的技能（如 @tts-open-toolkit/cli 托管的 tts-* 系列），须走其管理命令、勿手工删。</span></li>
+        <li><span class="t">CLI</span><span class="d">命令行界面（Command-Line Interface）；工具托管类技能的增删改靠敲管理命令完成。</span></li>
+        <li><span class="t">镜像部署 / 镜像文件</span><span class="d">把权威内容复制／同步成一份执行副本；此处强调对比——skill 不做镜像式实体仓，只登记。</span></li>
+        <li><span class="t">标准生效位置</span><span class="d">Claude Code 会去扫描并识别技能的几个固定目录：用户级、项目级、插件目录。</span></li>
+        <li><span class="t">外部下载 vs 自写沉淀</span><span class="d">台账「类型」字段两态：前者从网上仓库／作者处安装来，记来源与安装日期；后者自己写好放进去的，记「自写沉淀 · 日期」。</span></li>
+        <li><span class="t">巡检</span><span class="d">定期扫描标准位置：把漏登记的技能补记、把实体已消失的条目改状态，治「漏」。</span></li>
+        <li><span class="t">停用（可删）</span><span class="d">台账「状态」之一：不再用但不立即删，保留实体与登记；确认无影响后再真正删除。</span></li>
+        <li><span class="t">E:\skill 与 E:\model 分工</span><span class="d">E:\model 收模型实体（实体仓）；E:\skill 只收技能台账（登记制）。两者存储策略相反。</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="pair" id="E-04">
+    <div class="phead"><span class="zid">E-04</span><b>Z-04 MCP 与 CLI 工具台账 · 怎么落地</b><span class="back"><a href="总则.html#z-04" style="text-decoration:none;color:inherit">◂ 返回总则</a></span></div>
+    <div class="pbody">
+      <div class="lbl">落地说明</div>
+      <p style="margin:2px 0 0">这条属「配置与运行环境」的<b>登记制软规则</b>：与 Z-03 技能台账同属「实体不动、只做登记」一族，但登记对象扩到两类<b>外部接线</b>——<b>MCP 服务器</b>与<b>CLI 工具</b>。它不像 Z-02 模型仓那样把实体搬进统一目录，也不对工具做复制或目录联接，一律让它们在各自生效位置原样运行。</p>
+      <p style="margin:8px 0 0"><b>为什么只能登记、不能搬：</b>MCP 不是一个可拷走的文件，而是一段「注册进 Claude Code 的配置＋一条启动命令」。它注册在 Claude Code 配置里——项目级 <code>.mcp.json</code>、用户级 <code>~/.claude.json</code>（其内 <code>mcpServers</code> 段）；是否被识别，取决于「注册位置＋传输方式」是否成立，一旦从注册处挪走即断连。CLI 工具本体由包管理器/安装器放进 <code>PATH</code> 或已知路径，擅自搬动会破坏依赖与系统识别。故本条<b>不搬文件、不做目录联接</b>。</p>
+      <p style="margin:8px 0 0"><b>两本平行总台账：</b><code>E:\mcp\index.html</code> 与 <code>E:\cli\index.html</code> 各为一本总台账（纯登记处、非实体仓），MCP 与 CLI <b>各排各号、互不混编</b>：<code>MCP-001…</code> 与 <code>CLI-001…</code>，顺延分配、<b>只增不复用</b>（沿用 Z-02/Z-03 的编号纪律：删除不回收号，防旧引用错位）。</p>
+      <p style="margin:8px 0 0"><b>登记字段（一行一条）：</b>名称／能力一句话／来源／添加日期／位置或注册 scope（注明<b>项目级 vs 用户级</b>，项目级写明承载的 <code>.mcp.json</code> 所在项目）／启动命令／状态（<code>在编</code>｜<code>停用</code>｜<code>待测</code>）。<b>凭据纪律：</b>含密钥或远程项一律只记「所需<b>环境变量名</b>」（即运行时去读哪个变量的名字，如 <code>OPENAI_API_KEY</code> 这类名称本身），<b>明文 key/口令绝不写入台账</b>——把台账的泄密面压到最小。</p>
+      <p style="margin:8px 0 0"><b>卸载与测试走官方通道：</b>增删改查 MCP 注册一律用 Claude Code 自带命令 <code>claude mcp remove</code>／<code>claude mcp list</code> 等，勿手工编辑配置段或删目录；CLI 本体的升级/卸载走其来源包管理器（npm/pip 等）。</p>
+      <p style="margin:8px 0 0"><b>npx/uvx 与工具托管：</b>由 <code>npx</code>／<code>uvx</code> 即拉即跑、或由某工具自动托管者（如 <code>@tts-open-toolkit/cli</code> 拉起的 <code>tts-*</code>），本体由包源/工具统一管理，台账<b>只登记启动命令、不搬实体</b>；其运行缓存的物理收拢属系统级变更，另行批准后执行（呼应 Z-02 缓存归拢思路）。</p>
+      <p style="margin:8px 0 0"><b>生命周期同步：</b>新增／删除／停用任一 MCP 或 CLI 后即更新对应台账；定期反向核对「实体已不在」的条目、把状态改为停用，与 Z-03 的巡检口径一致。</p>
+      <p style="margin:8px 0 0"><b>跨 skill/MCP/CLI 互链：</b>同一来源横跨多本台账的工具，<b>只在一处正式登记</b>、其它处写编号互链指过去、不重复登记。例：<code>tts-open-toolkit</code> 已按 Z-03 在技能台账 <code>S-004</code> 立户，则其 CLI 侧在 <code>E:\cli\index.html</code> 只标「本体由 tts-open-toolkit 托管，见 S-004」，不再单开一条重复登记。</p>
+      <div class="lbl">通俗解释</div>
+      <div class="plain">Z-02 收的模型是<b>整箱整箱采购的货</b>，能统一搬进大仓库、一格一箱上架；MCP 和 CLI 却更像是<b>已经接进大楼里的水电管网接口</b>——想给 Claude 接一个「查天气」的服务，你得在楼里的接口面板上接好线（在配置里注册），告诉它这一路是干什么的、走哪根管道（stdio/HTTP）、由谁合闸启动。这时候要是硬把接口「搬进仓库」，等于把插头从面板上拔下来——大楼立刻就不认这一路了。所以对它们<b>只能记、不能搬</b>：在物业登记本（<code>E:\mcp</code>／<code>E:\cli</code> 台账）上写「几号楼哪个面板接了哪个服务、由谁启动、接的什么电」。带钥匙/密令的服务，登记本只记「这路电接的是哪块电表」（要哪个环境变量名），<b>绝不把钥匙抄在登记本上</b>。想看看现在接了几路，翻登记本或直接问中控（<code>claude mcp list</code>）；要拆掉一路，按规程断电（<code>claude mcp remove</code>），别硬拔。有些设备随叫随到、本体还在供应商那儿（<code>npx</code>／<code>uvx</code> 拉起的），登记本上照记「按哪个按钮能叫它」就行。同一套设备既当技能又当 CLI（如 tts-open-toolkit），只在技能那本上正式立户，CLI 这本标一句「见 S-004」，不重复立户。</div>
+      <div class="lbl">名词解释</div>
+      <ul class="gloss">
+        <li><span class="t">MCP</span><span class="d">模型上下文协议（Model Context Protocol）：一套统一接口标准，让 Claude Code 通过「注册好的服务器」去调用外部数据源与工具。</span></li>
+        <li><span class="t">MCP 服务器</span><span class="d">实现 MCP 协议、向 Claude 提供能力的一端进程/程序；运行在本地（stdio）或远端（HTTP），注册后才可被调用。</span></li>
+        <li><span class="t">stdio / HTTP 传输</span><span class="d">MCP 客户端与服务器之间的两条「管道」：stdio 走本地进程的标准输入输出（本机工具用），HTTP 走网络（远程服务用）。</span></li>
+        <li><span class="t">注册 / server 注册</span><span class="d">在 Claude Code 配置中登记一条 MCP server（名字、启动命令、传输方式）；注册了才被识别，未注册的服务器对 Claude 而言不存在。</span></li>
+        <li><span class="t">config / scope（项目级 vs 用户级）</span><span class="d">配置文件及其生效范围：项目级写进项目里的 .mcp.json，只在该项目生效；用户级写进 ~/.claude.json，对本机所有会话生效。</span></li>
+        <li><span class="t">.mcp.json</span><span class="d">项目级 MCP 配置文件，放项目根目录，声明该项目要接哪些 MCP server，随项目走。</span></li>
+        <li><span class="t">~/.claude.json</span><span class="d">用户级 Claude Code 主配置文件（~＝C:\Users\pc），可含全局 mcpServers 段，供本机各会话共用。</span></li>
+        <li><span class="t">PATH</span><span class="d">操作系统查找可执行文件的路径清单；一个 CLI 工具能被直接敲名字运行，前提是其所在目录在 PATH 里（或用绝对路径/管理器调用）。</span></li>
+        <li><span class="t">CLI</span><span class="d">命令行工具（Command-Line Interface）；本条登记对象之一，凡以终端命令调用的工具都算。</span></li>
+        <li><span class="t">npx / uvx</span><span class="d">Node 与 Python 生态的「即拉即跑」运行器：npx 跑 npm 包、uvx 跑 Python 包，按命令临时拉取执行、本体由包源托管，故台账只记启动命令、不搬实体。</span></li>
+        <li><span class="t">托管</span><span class="d">实体的安装、升级、卸载统一交由某工具/包管理器负责，不手工管理；被托管的工具（如 tts-open-toolkit 拉起的 tts-* 系列）只登记、不搬。</span></li>
+        <li><span class="t">环境变量名 vs 明文凭据</span><span class="d">台账只记「凭据由哪个环境变量提供」的名字，绝不写入 key 本身的明文——把台账泄密面压到最小。</span></li>
+        <li><span class="t">index.html 台账</span><span class="d">登记与查找用的清单页；E:\mcp\index.html、E:\cli\index.html 各为 MCP、CLI 的总台账，与 Z-02/Z-03 同款约定（非实体仓）。</span></li>
+        <li><span class="t">编号只增不复用</span><span class="d">MCP-001… / CLI-001… 顺延分配、删除不回收号；保证每条记录可追溯、旧引用不错位。</span></li>
+        <li><span class="t">跨表互链</span><span class="d">同源工具横跨 skill/MCP/CLI 多本台账时，只在一处正式登记，其它处写「→ 某编号」指过去，避免重复登记与口径漂移。</span></li>
+        <li><span class="t">claude mcp list / claude mcp remove</span><span class="d">Claude Code 内置的 MCP 管理命令：list 查看当前已注册的服务器，remove 移除某条注册；卸载/核对 MCP 一律走这里，勿手工删。</span></li>
+        <li><span class="t">镜像</span><span class="d">把权威内容复制/同步成一份执行副本的做法；本条要点在对照——MCP/CLI 与 skill 一样不做镜像式实体仓，只登记、原样引用。</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="pair" id="E-05">
+    <div class="phead"><span class="zid">E-05</span><b>Z-05 多 Agent 协作 · 全机行为默认 · 怎么落地</b><span class="back"><a href="总则.html#z-05" style="text-decoration:none;color:inherit">◂ 返回总则</a></span></div>
+    <div class="pbody">
+      <div class="lbl">落地说明</div>
+      <p style="margin:2px 0 0">这条把「多 Agent 协作」从纯方法论提升为<b>全机行为默认</b>（呼应 Z-01 适用范围：本机全部 Claude Code 项目通用）。它自身不含拆法细则——<b>何时拆 / 拆几个 / 怎么排</b>的细则在 会议章程 P-9（规范底稿）与「多 Agent 协作」Skill（用户级 <code>~/.claude/skills\multi-agent-collab\</code>，已登记 <code>E:\skill</code> 台账 S-009），本则正文只立触发默认。</p>
+      <p style="margin:8px 0 0"><b>触发时机：</b>当收到<b>大体量、可拆分</b>的指令，或用户表达<b>"看看是否需要多 Agent 协作"</b>等类似意思时，默认按多 Agent 流程评估并执行，而非默认单线程硬扛。评估用 P-9「三问」：① 够大？② 切得出相互独立、可并行的子块？③ 结果能验收？三问全中才拆；需与用户反复对齐、小活、强耦合 → 不拆、走单线程。</p>
+      <p style="margin:8px 0 0"><b>边界纪律：</b>顶层主会话始终在对话中、常驻不中断；派出的智能体只是主会话「可随时调整的延伸」，不是对话交接对象。任何拆分<b>不以让用户等待或主会话下线为代价</b>。主会话同一时刻只回一件事（单线程）；并行只压缩墙钟时间、不增加对话带宽。拍板权在用户、防越权；智能体完成＝「事件报上来」＝进度，不等于批准。</p>
+      <p style="margin:8px 0 0"><b>怎么排（通用编排原则）：</b>执行数＝独立子块数（常规 2–5）；结果关键/不可逆/高风险 → ＋1 对抗性核验；需留痕 → ＋1 纪要；指挥者（小希型）不计入工人数；单批总数建议 ≤6，超则分批。各子块互不依赖 → 一批并行；有先后因果 → 流水线（段内再并行）。只读（Explore）/ 规划（Plan）/ 执行（工人）/ 核验（复看）分开；简报自足、各管各、互不覆盖、只回结论。项目家族参考模板 F1–F6（调研/数据/创作/工程/产品/仿真）仅供按重心参考，非强制归类、具体项目可不参考。</p>
+      <p style="margin:8px 0 0"><b>本治理体系的实例：</b>批量落文件即按 P-8 由 书记长 领衔、编排 ≥3 书记子 Agent 并行（草总执三页各管一页、总则书记同轮镜像）；普通会话需拆活时，亦按上述原则先只读并行摸底再定人数派活。触发与执行细则见 Skill 本体。</p>
+      <div class="lbl">通俗解释</div>
+      <div class="plain">把顶层主会话想成<b>一直在灶台前掌勺的大厨</b>：大厨不会把厨房交给别人就离场，而是人一直在灶前。切菜、备料这些能分开的活，分给几个帮厨<b>同时</b>干——他们各自干完端一盘过来，大厨边掌勺边收；有先后的（先蒸再炒）就排好顺序一道道上；要上大席的菜，末尾再请一位老饕先试味挑刺（对抗性核验）。什么时候才值得分活？<b>菜够大、能切成互不牵连的几份、每份做完能验收</b>，三样齐全才分；只是随口要个小菜、或口味还得反复跟客人确认的，就自己一锅炒。帮手再多也只省出菜时间，<b>不替大厨跟客人说话</b>——最终拍板、加人减人、换菜式，永远是客人（用户）一句话的事。</div>
+      <div class="lbl">名词解释</div>
+      <ul class="gloss">
+        <li><span class="t">多 Agent 协作</span><span class="d">把一个任务拆给多个智能体并行或流水线协作完成的做法；本机在收到大体量/可拆分指令时默认按此流程评估执行。</span></li>
+        <li><span class="t">顶层主会话</span><span class="d">用户对话中的「我」；常驻、对话不中断，派出智能体后仍在对话中、可随时调整，是唯一与用户对话的对象。</span></li>
+        <li><span class="t">子智能体 / 书记</span><span class="d">主会话派出的执行单元；书记是治理体系内专责执笔页面（草案/总则/执行结构）的子 Agent 称谓。</span></li>
+        <li><span class="t">何时拆三问</span><span class="d">①够大？②能否切出相互独立、可并行的子块？③结果能否验收？三问全中才拆，缺一即单线程。</span></li>
+        <li><span class="t">并行 vs 流水线</span><span class="d">子块互不依赖→同一批并行；有先后因果→排成流水线（段内再并行）。</span></li>
+        <li><span class="t">对抗性核验</span><span class="d">末尾派一个专门挑错的智能体复看结果，用于关键/不可逆/高风险任务过质量关。</span></li>
+        <li><span class="t">墙钟时间 vs 对话带宽</span><span class="d">并行只压缩真实经过的时间（墙钟），不增加同一时刻主会话能对话处理的量（带宽）。</span></li>
+        <li><span class="t">简报自足</span><span class="d">派给子智能体的任务简报把路径、期望产物、约定与验收清单写全，使其能独立交付、只回结论。</span></li>
+        <li><span class="t">拍板权在用户</span><span class="d">拆分、增减人、换方向、批准都归用户/主会话即时决定；子智能体不替用户做其权限不允许的动作。</span></li>
+        <li><span class="t">F1–F6 参考模板</span><span class="d">按项目重心分的六类示意排法（调研/数据/创作/工程/产品/仿真）；非强制归类，具体项目可参考、可套用、可不参考。</span></li>
+        <li><span class="t">Skill 封装</span><span class="d">把规则写成用户级 <code>~/.claude/skills\multi-agent-collab\SKILL.md</code>，靠描述里的触发词被全项目会话自动识别调用。</span></li>
+        <li><span class="t">S-009</span><span class="d">「多 Agent 协作」Skill 在 <code>E:\skill</code> 台账的登记编号（自写沉淀 · 2026-09-04）。</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>变更记录<span class="tick"></span><span class="cnt">v0.9 · 正式展开 5</span></h2>
+  <p class="cl">2026-09-03 · v0.3 立宪：定位为总则逐条展开、双向锚点。<br>2026-09-03 · v0.4 依会议指示：①取消固定模板，落地说明按实情自由写；②每条末尾必带「通俗解释」；③每条末尾附「名词解释」（覆盖编程与 AI 词汇，允许跨条重复）。<br>2026-09-03 · v0.5 移除演示条目，写入第一条正式展开 E-01（Z-01 适用范围）。<br>2026-09-03 · v0.6 写入第二条正式展开 E-02（Z-02 模型文件统一仓），同步索引表。<br>2026-09-04 · v0.7 写入第三条正式展开 E-03（Z-03 技能台账），同步索引表。<br>2026-09-04 · v0.8 写入第四条正式展开 E-04（Z-04 MCP 与 CLI 工具台账），同步索引表。<br>2026-09-04 · v0.9 写入第五条正式展开 E-05（Z-05 多 Agent 协作 · 全机行为默认），同步索引表。</p>
+</div>
+</body>
+</html>

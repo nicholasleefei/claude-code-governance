@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>草案 · Claude Code 总则工作区</title>
+<style>
+:root{--bg:#eef0f5;--panel:#fff;--ink:#1c2130;--ink-soft:#3c4556;--sub:#566074;--line:#e4e8f0;--ac:#4f46e5;--ac-soft:#eef0ff;--amber:#b45309;--amber-soft:#fdf3de;--mono:"Cascadia Code",Consolas,monospace}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Segoe UI","Microsoft YaHei UI","Microsoft YaHei","PingFang SC",system-ui,sans-serif;font-size:15px;line-height:1.75;color:var(--ink);background:var(--bg)}
+a{color:#4338ca}a:hover{color:#312e81}
+code{font-family:var(--mono);font-size:13px;background:#f0f2f8;border:1px solid #e3e7f0;padding:1px 6px;border-radius:6px;color:#303749}
+.hero{background:linear-gradient(135deg,#12102e 0%,#1c1a5e 55%,#4f46e5 160%);color:#fff}
+.hero-in{max-width:1080px;margin:0 auto;padding:14px 24px 26px}
+.hrow{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.brand{font-size:13px;font-weight:600;letter-spacing:.5px;color:#d9d6f8}
+.brand b{color:#fff}.brand span{opacity:.7}
+.pills{display:flex;gap:6px;flex-wrap:wrap}
+.pills a{color:#e0defb;text-decoration:none;font-size:13.5px;padding:6px 15px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06)}
+.pills a:hover{background:rgba(255,255,255,.16)}
+.pills a[aria-current]{background:#fff;color:#3730a3;font-weight:700;border-color:#fff}
+.hero h1{margin:22px 0 4px;font-size:32px;line-height:1.25;letter-spacing:1px}
+.hero .sub{color:#e1e0fb;font-size:14.5px;margin:0;max-width:78ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.meta span{font-size:12.5px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);padding:3px 11px;border-radius:999px;color:#ecebfe}
+.wrap{max-width:1080px;margin:0 auto;padding:24px 24px 80px}
+h2{display:flex;align-items:center;gap:10px;font-size:20px;margin:30px 0 12px;letter-spacing:.5px}
+h2 .tick{width:6px;height:22px;border-radius:3px;background:linear-gradient(180deg,#818cf8,#4f46e5)}
+h2 .cnt{margin-left:auto;font-size:12px;color:var(--sub);background:#eef0f6;border:1px solid var(--line);padding:2px 10px;border-radius:999px;font-weight:600}
+.banner{background:#e7f6ec;border:1px solid #cfe8d8;border-left:6px solid #16a34a;border-radius:12px;padding:13px 18px;font-size:14px;color:#166534;margin:6px 0;line-height:1.8}
+.banner b{color:#14532d}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:12px 0;box-shadow:0 2px 8px rgba(15,23,42,.05)}
+.card .band{height:6px}
+.card-in{padding:16px 20px 10px}
+.card-top{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap}
+.chip{font-size:12.5px;font-weight:700;padding:3px 10px;border-radius:8px}
+.c-done{background:#e7f6ec;color:#15803d}
+.ct{flex:1;min-width:220px;margin:2px 0 0;font-size:17px;font-weight:800;letter-spacing:.3px;line-height:1.5}
+.ct small{display:block;font-size:12px;color:var(--sub);font-weight:500;margin-top:1px}
+.kv{list-style:none;margin:10px 0 0;padding:0}
+.kv li{display:flex;gap:12px;padding:7px 0;border-top:1px dashed var(--line);font-size:14.5px}
+.kv li:first-child{border-top:none}
+.kv .k{flex:0 0 74px;font-size:12px;color:var(--sub);padding-top:3px;letter-spacing:1px}
+.kv .v{flex:1}
+.kv ul{padding-left:18px;margin:4px 0}
+.kv li li{border:none;padding:2px 0;font-size:14px}
+.cl{margin:3px 0;font-size:14px;color:var(--sub);line-height:1.8}
+</style>
+</head>
+<body>
+<header class="hero"><div class="hero-in">
+  <div class="hrow">
+    <div class="brand"><b>Claude Code · 总则工作区</b> <span>/ E:\claude code总则</span></div>
+    <nav class="pills"><a href="会议章程.html">会议章程</a><a href="草案.html" aria-current="true">草案</a><a href="总则.html">总则</a><a href="执行结构.html">执行结构</a></nav>
+  </div>
+  <h1>草案</h1>
+  <p class="sub">提交给会议的候选。想法先在此起草、评审；<b>只有会议（用户）逐条批准后</b>才写入 <a href="总则.html" style="color:#c7d2fe">总则.html</a>。本页只收「总则内容」候选，不含方法论。</p>
+  <div class="meta"><span>候选 4</span><span>状态 · 4 候选在审 · 逐条议处</span><span>最近定案 · T-05 → Z-05</span><span>更新 2026-09-04</span></div>
+</div></header>
+
+<div class="wrap">
+  <div class="banner"><b>候选 T-05（多 Agent 协作 · 全机总则行为默认）已定案</b>：2026-09-04 获批准，纳入 <a href="总则.html#z-05" style="color:#166534">总则 Z-05</a> / 执行结构 <a href="执行结构.html#E-05" style="color:#166534">E-05</a>，镜像全机生效。<b>现收件箱 4 个新候选在审：T-06 版本库 · T-07 巡检制度 · T-08 纪要即记忆 · T-09 敏感信息红线，见下方卡片，逐条批准后进 总则。</b></div>
+
+  <h2>候选条款 <span class="tick"></span><span class="cnt">4 · 在审</span></h2>
+  <div class="card">
+    <div class="band" style="background:#d97706"></div>
+    <div class="card-in">
+      <div class="card-top"><span class="chip" style="background:#fdf3de;color:#b45309">候选</span><h3 class="ct">T-06 · 治理文档统一版本库（git）<small>拟定 → Z-06</small></h3></div>
+      <ul class="kv">
+        <li><span class="k">范围</span><span class="v">E:\claude code总则 全目录（四份 HTML ＋ 过程记录）纳入本机 git 版本库；目录当前不是 git 仓库，需先初始化。</span></li>
+        <li><span class="k">行为</span><span class="v">定案/实质修订后即提交；git 提交并入书记落档流程（P-8 落档时一并提交）。过程记录只增不改，历史经 git 可回溯、可回滚。</span></li>
+        <li><span class="k">基线</span><span class="v">现存文件首提交作基线 v0。</span></li>
+        <li><span class="k">待议</span><span class="v">是否异地/云端备份、提交粒度。</span></li>
+        <li><span class="k">状态</span><span class="v">在审 · 待你逐条批准（与其他候选分开议处）。</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="band" style="background:#d97706"></div>
+    <div class="card-in">
+      <div class="card-top"><span class="chip" style="background:#fdf3de;color:#b45309">候选</span><h3 class="ct">T-07 · 巡检制度 · 定期体检<small>拟定 → Z-07</small></h3></div>
+      <ul class="kv">
+        <li><span class="k">范围</span><span class="v">全机。</span></li>
+        <li><span class="k">行为</span><span class="v">按固定节奏（建议每季度一次）执行治理巡检——① 核对 E:\model / E:\skill / E:\mcp / E:\cli 台账与实体是否一致；② 收拢或登记 E:\model 之外散落的大体量模型文件；③ 清点"停用（可删）"项，该删则走流程。</span></li>
+        <li><span class="k">留痕</span><span class="v">巡检结果记入 过程记录。</span></li>
+        <li><span class="k">作用</span><span class="v">把 Z-02 的"巡检兜底"变成有节奏的默认行为。</span></li>
+        <li><span class="k">状态</span><span class="v">在审 · 待你逐条批准（与其他候选分开议处）。</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="band" style="background:#d97706"></div>
+    <div class="card-in">
+      <div class="card-top"><span class="chip" style="background:#fdf3de;color:#b45309">候选</span><h3 class="ct">T-08 · 纪要即记忆 · 跨会话续作<small>拟定 → Z-08</small></h3></div>
+      <ul class="kv">
+        <li><span class="k">范围</span><span class="v">全体系。</span></li>
+        <li><span class="k">行为</span><span class="v">凡会议/定案/大任务必在 过程记录 留"只增不改"的纪要（编号 YYYY-MM-DD-NN-主题）；纪要作为本体系唯一记忆源——会话压缩、换新窗口后一律先读纪要再接续，不靠人脑、不靠聊天记录。</span></li>
+        <li><span class="k">状态</span><span class="v">在审 · 待你逐条批准（与其他候选分开议处）。</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="band" style="background:#d97706"></div>
+    <div class="card-in">
+      <div class="card-top"><span class="chip" style="background:#fdf3de;color:#b45309">候选</span><h3 class="ct">T-09 · 敏感信息红线 · 凭据零明文<small>拟定 → Z-09</small></h3></div>
+      <ul class="kv">
+        <li><span class="k">范围</span><span class="v">全体系文件（纪要/草案/台账/总则/HTML）。</span></li>
+        <li><span class="k">行为</span><span class="v">一律不落明文凭据（API key/口令/token/私钥），最多只记环境变量名或占位符；已落者发现即改写为引用并提醒；外发/展示前自查。</span></li>
+        <li><span class="k">注记</span><span class="v">把 Z-04 的台账红线扩展成全体系红线。</span></li>
+        <li><span class="k">状态</span><span class="v">在审 · 待你逐条批准（与其他候选分开议处）。</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>变更记录<span class="tick"></span><span class="cnt">v0.14</span></h2>
+  <p class="cl">2026-09-03 · v0.1 建档（含方法论候选）。v0.2 清为内容候选收件箱。v0.3 立宪更名。v0.4 新增候选 T-01（适用范围）。v0.5 T-01 定案纳入 总则 Z-01，清位。v0.6 新增候选 T-02（模型文件统一仓）。v0.7 T-02 定案纳入 总则 Z-02，清位为空收件箱。2026-09-04 · v0.8 新增候选 T-03（技能台账 · E:\skill 登记制）。2026-09-04 · v0.9 T-03 定案纳入 总则 Z-03，清位为空收件箱，留定案轨迹。2026-09-04 · v0.10 新增候选 T-04（MCP 服务与 CLI 工具台账 · 登记制）。2026-09-04 · v0.11 T-04 定案纳入 总则 Z-04，清位为空收件箱，留定案轨迹。2026-09-04 · v0.12 新增候选 T-05（多 Agent 协作 · 全机总则行为默认 ＋ Skill 封装）。2026-09-04 · v0.13 T-05 定案纳入 总则 Z-05（多 Agent 协作 · 全机行为默认）＋封装 Skill，清位为空收件箱，留定案轨迹。2026-09-04 · v0.14 新增候选 T-06（版本库）、T-07（巡检制度）、T-08（纪要即记忆）、T-09（敏感信息红线）。</p>
+</div>
+</body>
+</html>

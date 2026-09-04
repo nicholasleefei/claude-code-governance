@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>会议章程 · Claude Code 总则工作区</title>
+<style>
+:root{--bg:#eef0f5;--panel:#fff;--ink:#1c2130;--sub:#566074;--line:#e4e8f0;--ac:#6d28d9;--ac-soft:#f2ecfd;--amber:#b45309;--amber-soft:#fdf3de;--teal:#0d9488;--mono:"Cascadia Code",Consolas,monospace}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Segoe UI","Microsoft YaHei UI","Microsoft YaHei","PingFang SC",system-ui,sans-serif;font-size:15px;line-height:1.75;color:var(--ink);background:var(--bg)}
+a{color:#5b21b6}a:hover{color:#2e1065}
+code{font-family:var(--mono);font-size:13px;background:#f0f2f8;border:1px solid #e3e7f0;padding:1px 6px;border-radius:6px;color:#303749}
+.hero{background:linear-gradient(135deg,#150f2b 0%,#2a1756 55%,#6d28d9 160%);color:#fff}
+.hero-in{max-width:1080px;margin:0 auto;padding:14px 24px 26px}
+.hrow{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.brand{font-size:13px;font-weight:600;letter-spacing:.5px;color:#d9d0f5}
+.brand b{color:#fff}.brand span{opacity:.7}
+.pills{display:flex;gap:6px;flex-wrap:wrap}
+.pills a{color:#e3dcfb;text-decoration:none;font-size:13.5px;padding:6px 15px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06)}
+.pills a:hover{background:rgba(255,255,255,.16)}
+.pills a[aria-current]{background:#fff;color:#5b21b6;font-weight:700;border-color:#fff}
+.hero h1{margin:22px 0 4px;font-size:32px;line-height:1.25;letter-spacing:1px}
+.hero .sub{color:#e3ddfb;font-size:14.5px;margin:0;max-width:78ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.meta span{font-size:12.5px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);padding:3px 11px;border-radius:999px;color:#efeafd}
+.wrap{max-width:1080px;margin:0 auto;padding:24px 24px 80px}
+h2{display:flex;align-items:center;gap:10px;font-size:20px;margin:34px 0 12px;letter-spacing:.5px}
+h2 .tick{width:6px;height:22px;border-radius:3px;background:linear-gradient(180deg,#8b5cf6,#6d28d9)}
+h2 .cnt{margin-left:auto;font-size:12px;color:var(--sub);background:#eef0f6;border:1px solid var(--line);padding:2px 10px;border-radius:999px;font-weight:600}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:0 0 6px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+.stat .n{font-size:26px;font-weight:800;line-height:1;color:#5b21b6;letter-spacing:.5px}
+.stat .l{font-size:12.5px;color:var(--sub);margin-top:6px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:12px 0;box-shadow:0 2px 8px rgba(15,23,42,.05)}
+.card .band{height:5px}
+.card-in{padding:16px 22px 10px}
+.card p{margin:6px 0;font-size:14.5px;color:var(--ink-soft,#3c4556)}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.grid .card{margin:0}
+.idx{font-family:var(--mono);font-size:13px;font-weight:800;padding:3px 10px;border-radius:8px;background:var(--ac-soft);color:#5b21b6}
+h3{display:flex;align-items:center;gap:10px;font-size:16.5px;margin:0 0 6px}
+.kv{list-style:none;margin:8px 0 0;padding:0}
+.kv li{display:flex;gap:12px;padding:7px 0;border-top:1px dashed var(--line);font-size:14.5px}
+.kv li:first-child{border-top:none}
+.kv .k{flex:0 0 74px;font-size:12px;color:var(--sub);padding-top:3px;letter-spacing:1px}
+.kv .v{flex:1}
+.kv ul{padding-left:18px;margin:4px 0}.kv li li{border:none;padding:2px 0;font-size:14px}
+.tl{list-style:none;margin:0;padding:4px 0 0}
+.tl li{display:flex;gap:16px;position:relative;padding:0 0 18px}
+.tl li::before{content:"";position:absolute;left:14px;top:30px;bottom:0;width:2px;background:var(--line)}
+.tl li:last-child::before{display:none}
+.tl .n{flex:0 0 30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:800;font-size:13px;color:#fff;background:var(--ac);box-shadow:0 0 0 5px var(--ac-soft);z-index:1}
+.tl .b{flex:1;padding-top:2px}
+.tl .b .t{font-weight:800;font-size:15px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.tl .b p{margin:2px 0 0;color:var(--sub);font-size:14px}
+.role{font-size:11.5px;font-weight:700;padding:1px 9px;border-radius:999px}
+.ro{background:#eef1f6;color:#3d4760}.rc{background:#e9f0fd;color:#1e40af}.rs{background:#f2ecfd;color:#5b21b6}.rl{background:#fdf0e3;color:#b45309}
+table{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:13.5px;margin:10px 0}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f4f2fb;font-weight:700;color:#41355e}
+tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#faf9fe}
+.note{background:var(--amber-soft);border:1px solid #eed9a6;border-left:6px solid #e0a100;border-radius:12px;padding:13px 18px;font-size:14px;color:#7a5207;margin:14px 0;line-height:1.85}
+.note b{color:#6b4700}
+.cl{margin:3px 0;font-size:14px;color:var(--sub)}
+.legend{display:flex;flex-wrap:wrap;gap:8px;font-size:12.5px;color:var(--sub);margin:2px 0}
+</style>
+</head>
+<body>
+<header class="hero"><div class="hero-in">
+  <div class="hrow">
+    <div class="brand"><b>Claude Code · 总则工作区</b> <span>/ E:\claude code总则</span></div>
+    <nav class="pills"><a href="会议章程.html" aria-current="true">会议章程</a><a href="草案.html">草案</a><a href="总则.html">总则</a><a href="执行结构.html">执行结构</a></nav>
+  </div>
+  <h1>会议章程</h1>
+  <p class="sub">本工作区 = 一场长期举行的「最高领导机构会议」。本章程规定这场会议<b>自己怎么开、怎么产出总则</b>，以及建立总则的技术路线。<b>章程若调整，产出总则的技术路线随之改变。</b></p>
+  <div class="meta"><span>章程条款 9</span><span>技术通道 3</span><span>状态 · 当前生效</span><span>更新 2026-09-04</span></div>
+</div></header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat"><div class="n">9<span style="font-size:15px;color:var(--sub)"> 条</span></div><div class="l">章程正文 P-1 ~ P-9</div></div>
+    <div class="stat"><div class="n">4<span style="font-size:15px;color:var(--sub)"> 页</span></div><div class="l">章程 · 草案 · 总则 · 执行结构</div></div>
+    <div class="stat"><div class="n">3<span style="font-size:15px;color:var(--sub)"> 道</span></div><div class="l">规则生效通道（软 / 硬 / 记忆）</div></div>
+    <div class="stat"><div class="n">小希</div><div class="l">执行助理 · 书记团领导 · 领衔 ≥3 书记（P-8）</div></div>
+  </div>
+
+  <h2>0 · 本文件的地位<span class="tick"></span></h2>
+  <div class="note"><b>方法论 ≠ 总则。</b>我们现在做的全部（含本章程、草案、过程记录）属于「<b>会议怎么开</b>」——是议事的程序；<b>只有会议拍板写入 总则.html 的，才是总则</b>。本文件当前是本工作区唯一已「生效」的交付文档，草案 / 总则 / 执行结构均为空，等会议逐条产出。</div>
+
+  <h2>1 · 会议与角色<span class="tick"></span></h2>
+  <div class="grid g2">
+    <div class="card"><div class="card-in"><h3><span class="idx">会议主体</span></h3><ul class="kv">
+      <li><span class="k">用户</span><span class="v">唯一决定权：逐条批准总则、批准本章程修订。</span></li>
+      <li><span class="k">Claude</span><span class="v">专业参谋（把关、优化、起草）+ 会议主持。决议需落文件时，把整批一句交办给助理「小希 · 书记长」（P-8），不亲自逐页改写，随即回到与你讨论。</span></li>
+    </ul></div></div>
+    <div class="card"><div class="card-in"><h3><span class="idx">小希 · 书记长</span></h3><ul class="kv">
+      <li><span class="k">定位</span><span class="v">常设执行助理（用户定名：小希）＝ 书记团的领导（首席书记）。主会话的"执行臂"。</span></li>
+      <li><span class="k">职责</span><span class="v">受主会话一句交办后：编排并派出 ≥3 书记子 Agent 并行 → 汇总核验防漏写 → 把决议整理成纪要存入 过程记录\（只追加）→ 回报一句话。</span></li>
+      <li><span class="k">不干</span><span class="v">不代替你决定；不替你与主会话议事；不亲自逐页当书记。</span></li>
+    </ul></div></div>
+    <div class="card"><div class="card-in"><h3><span class="idx">会议对象</span></h3><ul class="kv">
+      <li><span class="k">产出</span><span class="v">制定与维护「总则」及其执行结构。</span></li>
+      <li><span class="k">留痕</span><span class="v">本次会议每一句对话都记入 <code>过程记录\</code>（一次一文件）。</span></li>
+      <li><span class="k">修订</span><span class="v">章程修改需用户批准；批准后必须同步检查受影响的技术路线章节。</span></li>
+    </ul></div></div>
+  </div>
+
+  <h2>2 · 章程正文 <span class="cnt">P-1 ~ P-9</span><span class="tick"></span></h2>
+  <div class="grid g2">
+    <div class="card"><div class="band" style="background:#6d28d9"></div><div class="card-in"><h3><span class="idx">P-1</span>工作区定位</h3><p>本文件夹长期保留：最高会议的会议室 + 档案室。内容随时增改，不删除。</p></div></div>
+    <div class="card"><div class="band" style="background:#6d28d9"></div><div class="card-in"><h3><span class="idx">P-2</span>文件体系</h3><p>根目录＝1 文件夹 <code>过程记录\</code> + 4 份 HTML：会议章程 / 草案 / 总则 / 执行结构。中间产物一律进 <code>过程记录\</code>。</p></div></div>
+    <div class="card"><div class="band" style="background:#6d28d9"></div><div class="card-in"><h3><span class="idx">P-3</span>展示与互链</h3><p>总则＝只写结论、动态分类；执行结构＝总则逐条的展开，一一对应、双向锚点跳转；草案＝候选；本章程＝本页。</p></div></div>
+    <div class="card"><div class="band" style="background:#6d28d9"></div><div class="card-in"><h3><span class="idx">P-4</span>专业把关</h3><p>Claude 坚持专业性、不盲从；对每一条观点做专业校验与优化，直接指正、温和纠偏。</p></div></div>
+    <div class="card"><div class="band" style="background:#6d28d9"></div><div class="card-in"><h3><span class="idx">P-5</span>会议记录</h3><p>全部对话按 <code>YYYY-MM-DD-序号-主题</code> 记入 <code>过程记录\</code>；历史只追加、不删除、不改写。</p></div></div>
+    <div class="card"><div class="band" style="background:#0d9488"></div><div class="card-in"><h3><span class="idx">P-6</span>纳入机制</h3><p>只有用户<b>逐条拍板</b>的内容才写入 总则.html。草案未获批准一律不生效。<b>生效稿一词废弃，正式名＝总则。</b></p></div></div>
+    <div class="card"><div class="band" style="background:#b45309"></div><div class="card-in"><h3><span class="idx">P-7</span>章程修订</h3><p>本章程本身可修订，但须用户批准并记变更记录；修订后若改变产出流程，须标注影响并更新 §3 技术路线。</p></div></div>
+    <div class="card"><div class="band" style="background:#0ea5e9"></div><div class="card-in"><h3><span class="idx">P-8</span>并行书记团 · 书记长领衔</h3><p>会议决议需落到文件时，主会话<b>不串行逐页改写</b>，把整批一句交办给常设执行助理「小希 · 书记长（首席书记）」。书记长随后：①派出 <b>≥3 个书记子 Agent 并行</b>、各管一页——<b>书记·草案</b>→草案.html；<b>书记·总则</b>→总则.html，并<b>同时</b>按 §4 把已批条文部署到真正生效的位置（软规则→用户级 CLAUDE.md；红线→settings 权限）；<b>书记·执行</b>→执行结构.html。②汇总核验、防漏写。③把本次决议整理成纪要存入 <code>过程记录\</code>。各书记只写自己的页面、互不覆盖。书记不得少于 3，随议题可增。主会话保留：与你讨论、定稿结论、章程修订。<b>分工边界（2026-09-04 入宪）</b>：主会话＝讨论、定案、一句话交办；小希（书记长）＝一切批量落文件——三页 HTML（编排 ≥3 书记并行落地）、台账登记/更新（E:\model、E:\skill 等）、纪要落档、镜像部署；主会话不再亲自逐项写文件。</p></div></div>
+    <div class="card"><div class="band" style="background:#16a34a"></div><div class="card-in"><h3><span class="idx">P-9</span>多 Agent 拆分规则</h3>
+      <p><b>核心原则：</b>顶层主会话（用户对话中的“我”）常驻、对话不中断；派出的各智能体只是主会话“可随时调整的延伸”，不是对话的交接对象。任何拆分都不得以“让用户等待 / 让主会话下线”为代价。主会话同一时刻只回一件事（单线程），子智能体并行只压缩墙钟时间、不增加对话带宽。</p>
+      <p><b>一、何时拆（三问全中才拆；缺一即单线程）：</b>① 够大？② 切得出相互独立、可并行的子块？③ 结果能验收？反向不拆：需与用户反复对齐、小活、强耦合。</p>
+      <p><b>二、拆几个：</b>执行数＝独立子块数（常规 2–5）；结果关键/不可逆/高风险 → ＋1 核验；需留痕 → ＋1 纪要；指挥者（小希型）不计入工人数；单批总数建议 ≤6，超则分批。</p>
+      <p><b>三、怎么排（编排原则，无论哪种流程/组合都成立）：</b>· 顶层常驻、随时可调：加人/减人/换方向/叫停/续用，都是主会话即时一句，不打断与用户的对话；智能体完成＝“事件报上来”＝进度，不等于批准、也不等于主会话“回来了”。<br>· 各子块互不依赖 → 一批并行；有先后因果 → 流水线（段内再并行）；要过质量关 → 末尾加 1 个对抗性核验。<br>· 只读（Explore）/ 规划（Plan）/ 执行（工人）/ 核验（复看）分开。<br>· 简报自足（路径/期望产物/约定/验收清单写全）；各管各、互不覆盖；只回结论、不甩转录。<br>· 拍板权在用户；不替用户做任何其权限不允许的动作（防越权）。</p>
+      <p><b>四、项目家族参考模板（F1–F6）：</b><br>【本段定位：仅供用户查看/参考的示意——<b>非强制归类</b>，遇到具体项目不必归入某类，甚至可不参考、不套用。别把它当死规矩。】<br>按“项目重心”分六个家族，多数项目为混合，按最大重心定主排法、其余就地补零件、不整套换：<br>F1 调研情报（资料/行情/摸底）＝顶层我＋多调研员(Explore·只读)＋1核验 → 多路并行、各回结论、我归并、核验交叉验来源。<br>F2 数据活（查看/清洗/分析/可视化）＝顶层我＋执行工人＋1核验 → 流水线取→洗→析→画，段内可并就并。<br>F3 创作媒体（视频剪辑/编辑、图文、音频）＝顶层我＋执行工人＋纪要员 → 创意方向走单线程对话，素材处理等可并行体力活才外派。<br>F4 工程开发（写代码/改 bug/加功能）＝顶层我＋规划师(Plan)＋隔离执行工人＋核验员 → 先只读并行摸代码库→我定方案→隔离改块→末尾对抗性核验。<br>F5 产品搭建（网站/小程序/APP 端到端）＝顶层我＋协调者(小希型)＋规划师＋按模块工人＋核验 → 分层树，模块分区并行，先架构后动工，集成处串行。<br>F6 模拟仿真（数据模拟/用户行为模拟/压力推演）＝顶层我＋蜂群节点群 → 蜂群仅此家族有不可替代价值，起模拟节点并行喂数据回来，我解读结论调参数。</p>
+    </div></div>
+  </div>
+
+  <h2>3 · 产出总则的技术路线 <span class="cnt">管线 · 章程 P-7 变更时同步此处</span><span class="tick"></span></h2>
+  <div class="card"><div class="card-in"><ol class="tl">
+    <li><span class="n">0</span><div class="b"><span class="t">议题出现 <span class="role ro">用户</span></span><p>提出一个想法 / 一条要求。</p></div></li>
+    <li><span class="n">1</span><div class="b"><span class="t">记入草案 <span class="role rl">书记 · 草案</span></span><p>写进 草案.html 起草。</p></div></li>
+    <li><span class="n">2</span><div class="b"><span class="t">评审 · 打磨 <span class="role rc">Claude</span><span class="role ro">用户 · 拍板</span></span><p>Claude 专业把关成可执行结论；用户逐条表态。</p></div></li>
+    <li><span class="n">3</span><div class="b"><span class="t">纳入总则 <span class="role ro">用户</span><span class="role rl">书记长</span></span><p>获批准 → 主会话一句交办书记长 → 书记团开工：写入 总则.html（编号、分类标签、记变更）。</p></div></li>
+    <li><span class="n">4</span><div class="b"><span class="t">生成执行展开 <span class="role rl">书记 · 执行</span></span><p>在 执行结构.html 写入同 id 的落地说明，建双向锚点。与第 3 步并行。</p></div></li>
+    <li><span class="n">5</span><div class="b"><span class="t">跨项目部署（如需） <span class="role rl">书记 · 总则</span><span class="role rs">系统</span></span><p>总则书记在写 总则.html 的同一轮里完成：软规则 → 用户级 CLAUDE.md 镜像；红线 → settings 权限。与第 4 步并行。</p></div></li>
+    <li><span class="n">6</span><div class="b"><span class="t">校验 <span class="role rs">系统</span><span class="role rl">书记长</span></span><p>书记长汇总核验三页与部署结果；<code>/context</code>、<code>/memory</code>、<code>/status</code> 抽查确认生效。</p></div></li>
+    <li><span class="n">7</span><div class="b"><span class="t">纪要落档 <span class="role rl">书记长</span></span><p>本次决议整理成纪要存入 过程记录\（只追加），回报主会话与用户。</p></div></li>
+    <li><span class="n">8</span><div class="b"><span class="t">反馈 · 维护 <span class="role ro">用户</span><span class="role rc">Claude</span></span><p>过时 / 不合 → 回第 0 步修订；防漂移：总则为权威、单向流出。</p></div></li>
+  </ol></div></div>
+  <div class="note"><b>并行执行（P-8 · 书记长领衔）：</b>第 3 步「获批准」即触发书记团。主会话不再逐人派活——把整批交办给书记长，自己即刻回到与你讨论。书记长派 ≥3 书记并行完成第 3、4、5 步页面写入与部署，汇总核验后落纪要；其中<b>总则书记</b>写 总则.html 的同时，须把该条按 §4 同步到 Claude Code 真正加载的位置（用户级 CLAUDE.md / settings 权限），确保人读层与执行层同轮到位、不脱节。</div>
+
+  <h2>4 · 规则生效的三条技术通道 <span class="tick"></span></h2>
+  <p style="color:var(--sub)">获准的总则要「真正约束 Claude」，依性质走三条通道——加载、强制力、跨项目能力不同。</p>
+  <table>
+    <tr><th>通道</th><th>回答</th><th>载体</th><th>谁写入</th><th>加载</th><th>强制</th><th>跨项目</th></tr>
+    <tr><td><b>软规则</b></td><td>该怎么做</td><td>用户级 CLAUDE.md <code>C:\Users\pc\.claude\CLAUDE.md</code></td><td>书记 · 总则 单向镜像</td><td>每会话全文</td><td>指导性</td><td>所有项目</td></tr>
+    <tr><td><b>硬约束</b></td><td>绝不能做</td><td><code>settings.json</code> deny + hooks</td><td>人 + 书记 · 总则</td><td>系统即时</td><td><b>强制</b></td><td>所有项目</td></tr>
+    <tr><td><b>记忆</b></td><td>自适应</td><td><code>~\.claude\projects\…\memory\</code></td><td>Claude 自动</td><td>索引+按需</td><td>参考</td><td>按项目</td></tr>
+  </table>
+  <div class="note"><b>推论：</b>四份 HTML 是「给人看的层」，不自动进 Claude 上下文；要跨项目生效，唯一入口是按 §3 第 5 步做镜像/权限部署。</div>
+
+  <h2>5 · 文件体系与角色 <span class="tick"></span></h2>
+  <table>
+    <tr><th style="width:34%">文件 / 角色</th><th>职责</th><th style="width:22%">维护者</th><th>何时影响 Claude</th></tr>
+    <tr><td><code>会议章程.html</code></td><td>本页 · 会议怎么开 + 技术路线</td><td>主会话 · 章程修订时</td><td>仅被读取时</td></tr>
+    <tr><td><code>草案.html</code></td><td>待议候选（总则前）</td><td>书记 · 草案（经书记长编排）</td><td>仅被读取时</td></tr>
+    <tr><td><code>总则.html</code></td><td>★获准结论 · 动态分类（唯一权威）</td><td>书记 · 总则（经书记长编排）</td><td>仅被读取时</td></tr>
+    <tr><td><code>执行结构.html</code></td><td>总则逐条展开 · 一一对应</td><td>书记 · 执行（经书记长编排）</td><td>仅被读取时</td></tr>
+    <tr><td><code>过程记录\*.md</code></td><td>会议纪要 · 决策痕迹</td><td>书记长 · 每次决议</td><td>追溯时</td></tr>
+    <tr><td><code>书记长</code></td><td>执行助理 · 书记团领导＝一切批量落文件：编排≥3 书记并行写三页、台账登记/更新（E:\model、E:\skill 等）、镜像部署、汇总核验、落纪要、回报</td><td>主会话交办时召出</td><td>不经手页面正文（各页由所派书记执笔）</td></tr>
+    <tr><td><code>C:\Users\pc\.claude\CLAUDE.md</code></td><td>跨项目软规则镜像目标</td><td>书记 · 总则 单向同步</td><td><b>每会话自动全文</b></td></tr>
+    <tr><td><code>C:\Users\pc\.claude\settings.json</code></td><td>硬红线 deny + hooks</td><td>人 + 书记 · 总则</td><td>系统即时</td></tr>
+  </table>
+  <div class="note"><b>维护分工（P-8）：</b>草案 / 总则 / 执行结构 三页的更新与纪要落档，由主会话<b>一句交办书记长</b>后，书记长编排 <b>≥3 书记子 Agent 并行</b>完成（各管一页）；会议章程.html 由主会话维护。<b>总则书记兼执行 §4 部署</b>，使人读层与执行层同轮同步、不脱节。主会话不再亲自逐页改写文件。</div>
+
+  <h2>6 · 校验与排查 <span class="tick"></span></h2>
+  <table>
+    <tr><th style="width:20%">命令</th><th>用途</th></tr>
+    <tr><td><code>/context</code></td><td>查当前会话真实加载的规则 / 记忆——验证「到底遵守了没有」。</td></tr>
+    <tr><td><code>/memory</code></td><td>查看 / 编辑记忆，切换自动记忆。</td></tr>
+    <tr><td><code>/status</code></td><td>显示生效的设置来源。</td></tr>
+  </table>
+
+  <h2>7 · 会议记录索引与变更记录 <span class="tick"></span></h2>
+  <div class="card"><div class="card-in"><ul class="kv">
+    <li><span class="k">纪要</span><span class="v">2026-09-03-01 工作区建仓 · -02 框架重构 · -03 会议章程立宪 · -04 执行结构写作规范 · -05 并行书记团机制入宪 · -06 Z-01 定案与全机部署 · -07 Z-02 定案与全机部署 · -08 书记长制入宪（章程 v0.3） · -09 Z-03 技能台账定案与分工边界入宪（2026-09-04） · -10 Z-04 MCP与CLI工具台账定案（2026-09-04） · -11 P-9 多 Agent 拆分规则入宪（2026-09-04） · -12 盘符纠错：统一落点 D→E（2026-09-04） · -13 多 Agent 协作 Z-05 定案与 Skill 建置（2026-09-04） → 详见 过程记录\</span></li>
+    <li><span class="k">v0.1</span><span class="v">2026-09-03 · 本章程建档（P-1~P-7）；确立「会议 → 章程 → 总则」三层模型；生效稿正式更名总则。</span></li>
+    <li><span class="k">v0.2</span><span class="v">2026-09-03 · 修订入宪 P-8 并行书记团：≥3 书记子 Agent 并行改文件；总则书记同轮部署全局。技术路线 §3、角色 §1/§5 同步。</span></li>
+    <li><span class="k">v0.3</span><span class="v">2026-09-03 · P-8 升格为「书记长领衔」：设常设执行助理「书记长（首席书记）」，主会话只一句交办整批，不再逐人派活、不亲自逐页改写；纪要落档移交书记长。§1 增书记长角色、§3 管线增 7 步纪要、§5 分工表更新。</span></li>
+    <li><span class="k">v0.4</span><span class="v">2026-09-04 · 分工边界入宪：主会话＝讨论、定案、一句话交办；小希（书记长）＝一切批量落文件（三页 HTML、台账登记/更新、纪要落档、镜像部署），主会话不再亲自逐项写文件。P-8 卡片补边界句、§5 书记长行一致化；执行助理定名「小希」的称谓此前已在 v0.3 确立，本次只补边界、不涉称谓变更。</span></li>
+    <li><span class="k">v0.5</span><span class="v">2026-09-04 · P-9 多 Agent 拆分规则入宪（含何时拆 / 拆几个 / 怎么排与 F1–F6 参考模板，模板仅供参考非强制归类）。方法论单页修订，按纪要-05 先例不入 草案/总则/执行结构、不镜像 CLAUDE.md。</span></li>
+  </ul></div></div>
+</div>
+</body>
+</html>

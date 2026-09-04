@@ -1,0 +1,6 @@
+# 治理库统一换行：仓库存 LF，各机检出按本机习惯（Windows=CRLF），避免跨机差异噪音
+* text=auto
+*.txt text
+*.md text
+*.html text
+*.gitattributes text
