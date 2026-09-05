@@ -117,7 +117,7 @@ tbody tr:hover{background:#faf9fe}
     <div class="card"><div class="band" style="background:#6d28d9"></div><div class="card-in"><h3><span class="idx">P-5</span>会议记录</h3><p>全部对话按 <code>YYYY-MM-DD-序号-主题</code> 记入 <code>过程记录\</code>；历史只追加、不删除、不改写。</p></div></div>
     <div class="card"><div class="band" style="background:#0d9488"></div><div class="card-in"><h3><span class="idx">P-6</span>纳入机制</h3><p>只有用户<b>逐条拍板</b>的内容才写入 总则.html。草案未获批准一律不生效。<b>生效稿一词废弃，正式名＝总则。</b></p></div></div>
     <div class="card"><div class="band" style="background:#b45309"></div><div class="card-in"><h3><span class="idx">P-7</span>章程修订</h3><p>本章程本身可修订，但须用户批准并记变更记录；修订后若改变产出流程，须标注影响并更新 §3 技术路线。</p></div></div>
-    <div class="card"><div class="band" style="background:#0ea5e9"></div><div class="card-in"><h3><span class="idx">P-8</span>并行书记团 · 书记长领衔</h3><p>会议决议需落到文件时，主会话<b>不串行逐页改写</b>，把整批一句交办给常设执行助理「小希 · 书记长（首席书记）」。书记长随后：①派出 <b>≥3 个书记子 Agent 并行</b>、各管一页——<b>书记·草案</b>→草案.html；<b>书记·总则</b>→总则.html，并<b>同时</b>按 §4 把已批条文部署到真正生效的位置（软规则→用户级 CLAUDE.md；红线→settings 权限）；<b>书记·执行</b>→执行结构.html。②汇总核验、防漏写。③把本次决议整理成纪要存入 <code>过程记录\</code>。各书记只写自己的页面、互不覆盖。书记不得少于 3，随议题可增。主会话保留：与你讨论、定稿结论、章程修订。<b>分工边界（2026-09-04 入宪）</b>：主会话＝讨论、定案、一句话交办；小希（书记长）＝一切批量落文件——三页 HTML（编排 ≥3 书记并行落地）、台账登记/更新（E:\model、E:\skill 等）、纪要落档、镜像部署；主会话不再亲自逐项写文件。</p></div></div>
+    <div class="card"><div class="band" style="background:#0ea5e9"></div><div class="card-in"><h3><span class="idx">P-8</span>并行书记团 · 书记长领衔</h3><p>会议决议需落到文件时，主会话<b>不串行逐页改写</b>，把整批一句交办给常设执行助理「小希 · 书记长（首席书记）」。书记长随后：①派出 <b>≥3 个书记子 Agent 并行</b>、各管一页——<b>书记·草案</b>→草案.html；<b>书记·总则</b>→总则.html，并<b>同时</b>按 §4 把已批条文部署到真正生效的位置（软规则→用户级 CLAUDE.md；红线→settings 权限）；<b>书记·执行</b>→执行结构.html。②汇总核验、防漏写。③把本次决议整理成纪要存入 <code>过程记录\</code>。各书记只写自己的页面、互不覆盖。书记不得少于 3，随议题可增。主会话保留：与你讨论、定稿结论、章程修订。<b>分工边界（2026-09-04 入宪）</b>：主会话＝讨论、定案、一句话交办；小希（书记长）＝一切批量落文件——三页 HTML（编排 ≥3 书记并行落地）、台账登记/更新（E:\01-model、E:\02-skill 等）、纪要落档、镜像部署；主会话不再亲自逐项写文件。</p></div></div>
     <div class="card"><div class="band" style="background:#16a34a"></div><div class="card-in"><h3><span class="idx">P-9</span>多 Agent 拆分规则</h3>
       <p><b>核心原则：</b>顶层主会话（用户对话中的“我”）常驻、对话不中断；派出的各智能体只是主会话“可随时调整的延伸”，不是对话的交接对象。任何拆分都不得以“让用户等待 / 让主会话下线”为代价。主会话同一时刻只回一件事（单线程），子智能体并行只压缩墙钟时间、不增加对话带宽。</p>
       <p><b>一、何时拆（三问全中才拆；缺一即单线程）：</b>① 够大？② 切得出相互独立、可并行的子块？③ 结果能验收？反向不拆：需与用户反复对齐、小活、强耦合。</p>
@@ -159,7 +159,7 @@ tbody tr:hover{background:#faf9fe}
     <tr><td><code>总则.html</code></td><td>★获准结论 · 动态分类（唯一权威）</td><td>书记 · 总则（经书记长编排）</td><td>仅被读取时</td></tr>
     <tr><td><code>执行结构.html</code></td><td>总则逐条展开 · 一一对应</td><td>书记 · 执行（经书记长编排）</td><td>仅被读取时</td></tr>
     <tr><td><code>过程记录\*.md</code></td><td>会议纪要 · 决策痕迹</td><td>书记长 · 每次决议</td><td>追溯时</td></tr>
-    <tr><td><code>书记长</code></td><td>执行助理 · 书记团领导＝一切批量落文件：编排≥3 书记并行写三页、台账登记/更新（E:\model、E:\skill 等）、镜像部署、汇总核验、落纪要、回报</td><td>主会话交办时召出</td><td>不经手页面正文（各页由所派书记执笔）</td></tr>
+    <tr><td><code>书记长</code></td><td>执行助理 · 书记团领导＝一切批量落文件：编排≥3 书记并行写三页、台账登记/更新（E:\01-model、E:\02-skill 等）、镜像部署、汇总核验、落纪要、回报</td><td>主会话交办时召出</td><td>不经手页面正文（各页由所派书记执笔）</td></tr>
     <tr><td><code>C:\Users\pc\.claude\CLAUDE.md</code></td><td>跨项目软规则镜像目标</td><td>书记 · 总则 单向同步</td><td><b>每会话自动全文</b></td></tr>
     <tr><td><code>C:\Users\pc\.claude\settings.json</code></td><td>硬红线 deny + hooks</td><td>人 + 书记 · 总则</td><td>系统即时</td></tr>
   </table>

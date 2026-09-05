@@ -93,27 +93,27 @@ h2 .cnt{margin-left:auto;font-size:12px;color:var(--sub);background:#e7efee;bord
     </div>
     <div class="pcard" id="z-02" style="border-left-color:#2563eb">
       <div class="pt">
-        <b>模型文件统一仓 · E:\model</b>
+        <b>模型文件统一仓 · E:\01-model</b>
         <span class="pno">Z-02 · 已批准 2026-09-03</span>
-        <p class="ztext">本机所有模型文件的默认落点为 E:\model\，一律不落入项目目录。E:\model\ 按「编号-模型名@版本」一模型一夹；根目录 index.html 总台账负责编号登记与查找，每夹内 index.html 为该模型说明书；任务用模型先查台账、有则复用、不重复下载。工具自带缓存经环境变量收拢至 E:\model\_cache\&lt;工具&gt;\（不拆一模型一夹）。项目内联调必需的小模型为例外，须登记台账并用 .gitignore 排除。定期巡检：凡 E:\model 之外的大体量模型文件一律归拢或登记。</p>
+        <p class="ztext">本机所有模型文件的默认落点为 E:\01-model\，一律不落入项目目录。E:\01-model\ 按「编号-模型名@版本」一模型一夹；根目录 index.html 总台账负责编号登记与查找，每夹内 index.html 为该模型说明书；任务用模型先查台账、有则复用、不重复下载。工具自带缓存经环境变量收拢至 E:\01-model\_cache\&lt;工具&gt;\（不拆一模型一夹）。项目内联调必需的小模型为例外，须登记台账并用 .gitignore 排除。定期巡检：凡 E:\01-model 之外的大体量模型文件一律归拢或登记。</p>
       </div>
       <div class="tags"><span class="tag t-files">文件与存储规范</span></div>
       <a class="btn" href="执行结构.html#E-02">执行详解 ▸</a>
     </div>
     <div class="pcard" id="z-03" style="border-left-color:#2563eb">
       <div class="pt">
-        <b>技能台账 · E:\skill（登记制）</b>
+        <b>技能台账 · E:\02-skill（登记制）</b>
         <span class="pno">Z-03 · 已批准 2026-09-04</span>
-        <p class="ztext">本机 Claude Code 的 skill（含用户要求下载部署的外部 skill、与要求沉淀的自写 skill）不强搬、不强拆、不做目录联接——各自待在标准生效位置（用户级 ~/.claude/skills、项目级 .claude/skills、插件内）。E:\skill\ 仅作台账登记处：根 index.html 为总台账，登记“装了什么 / 何时装 / 在哪 / 能干什么”，供统一管理（查找、删除、测试）。编号 S-001… 只增不复用，与 E:\model 的模型 M 号相互独立。新增/删除/停用任一 skill 后须更新台账；外部下载记来源与安装日期，自写沉淀记“自写沉淀 · 日期”；能力权威说明以其所在目录原生 SKILL.md 为准，台账只作索引不另抄。停用不删夹，状态改“停用（可删）”。</p>
+        <p class="ztext">本机 Claude Code 的 skill（含用户要求下载部署的外部 skill、与要求沉淀的自写 skill）不强搬、不强拆、不做目录联接——各自待在标准生效位置（用户级 ~/.claude/skills、项目级 .claude/skills、插件内）。E:\02-skill\ 仅作台账登记处：根 index.html 为总台账，登记“装了什么 / 何时装 / 在哪 / 能干什么”，供统一管理（查找、删除、测试）。编号 S-001… 只增不复用，与 E:\01-model 的模型 M 号相互独立。新增/删除/停用任一 skill 后须更新台账；外部下载记来源与安装日期，自写沉淀记“自写沉淀 · 日期”；能力权威说明以其所在目录原生 SKILL.md 为准，台账只作索引不另抄。停用不删夹，状态改“停用（可删）”。</p>
       </div>
       <div class="tags"><span class="tag t-files">文件与存储规范</span></div>
       <a class="btn" href="执行结构.html#E-03">执行详解 ▸</a>
     </div>
     <div class="pcard" id="z-04" style="border-left-color:#2563eb">
       <div class="pt">
-        <b>MCP 服务与 CLI 工具台账 · E:\mcp / E:\cli（登记制）</b>
+        <b>MCP 服务与 CLI 工具台账 · E:\03-mcp / E:\04-cli（登记制）</b>
         <span class="pno">Z-04 · 已批准 2026-09-04</span>
-        <p class="ztext">本机 Claude Code 生态的 MCP 服务器与 CLI 工具，同样采用登记制：实体各归标准生效位置（MCP 注册于 Claude Code 配置——项目 .mcp.json / 用户级 ~/.claude.json 等；CLI 位于 PATH/已知路径），不搬文件、不做目录联接。E:\mcp\ 与 E:\cli\ 各设 index.html 总台账登记（E 盘根下平级，与 E:\model、E:\skill 相互独立）。编号 MCP-001… 与 CLI-001… 只增不复用。登记含：名称、能力、来源、添加日期、位置/注册 scope、启动命令、状态；含凭据/远程项只记所需环境变量名、明文不入台账；npx/uvx 或工具自动托管者只登记不搬家（物理收拢缓存另行批准）。新增、删除、停用任一 MCP/CLI 后须更新台账；跨 skill/MCP/CLI 的同源工具做编号互链，不重复登记。</p>
+        <p class="ztext">本机 Claude Code 生态的 MCP 服务器与 CLI 工具，同样采用登记制：实体各归标准生效位置（MCP 注册于 Claude Code 配置——项目 .mcp.json / 用户级 ~/.claude.json 等；CLI 位于 PATH/已知路径），不搬文件、不做目录联接。E:\03-mcp\ 与 E:\04-cli\ 各设 index.html 总台账登记（E 盘根下平级，与 E:\01-model、E:\02-skill 相互独立）。编号 MCP-001… 与 CLI-001… 只增不复用。登记含：名称、能力、来源、添加日期、位置/注册 scope、启动命令、状态；含凭据/远程项只记所需环境变量名、明文不入台账；npx/uvx 或工具自动托管者只登记不搬家（物理收拢缓存另行批准）。新增、删除、停用任一 MCP/CLI 后须更新台账；跨 skill/MCP/CLI 的同源工具做编号互链，不重复登记。</p>
       </div>
       <div class="tags"><span class="tag t-files">文件与存储规范</span></div>
       <a class="btn" href="执行结构.html#E-04">执行详解 ▸</a>
@@ -140,7 +140,7 @@ h2 .cnt{margin-left:auto;font-size:12px;color:var(--sub);background:#e7efee;bord
       <div class="pt">
         <b>外链巡检 · 登记↔实体一致性核查</b>
         <span class="pno">Z-07 · 已批准 2026-09-04</span>
-        <p class="ztext">每周例行核查治理体系的"登记→外部实体"链接健康——E:\model / E:\skill / E:\mcp / E:\cli 各台账条目指向的实体存在且有效；实际存在而未登记者补登或收拢；失效、停用者走流程清理。结果记入 过程记录。</p>
+        <p class="ztext">每周例行核查治理体系的"登记→外部实体"链接健康——E:\01-model / E:\02-skill / E:\03-mcp / E:\04-cli 各台账条目指向的实体存在且有效；实际存在而未登记者补登或收拢；失效、停用者走流程清理。结果记入 过程记录。</p>
       </div>
       <div class="tags"><span class="tag t-files">文件与存储规范</span></div>
       <a class="btn" href="执行结构.html#E-07">执行详解 ▸</a>
@@ -200,8 +200,8 @@ h2 .cnt{margin-left:auto;font-size:12px;color:var(--sub);background:#e7efee;bord
     <li><span class="k">逐条批准</span><span class="v">写入前必须已获你明确同意；否决项留在草案。</span></li>
   </ul></div>
 
-  <h2>变更记录<span class="tick"></span><span class="cnt">v0.14 · 已批准 12 条</span></h2>
-  <p class="cl">2026-09-03 · v0.1 建档（误含方法论 R-0~R-5）。v0.2 清空、逐条批准制。v0.3 立宪更名：正式定名「总则」，动态分类结论板，与执行结构一一对应互跳。<br>2026-09-03 · v0.4 写入 Z-01（适用范围·效力与总纲），移除界面示意演示区，镜像部署用户级 CLAUDE.md。<br>2026-09-03 · v0.5 写入 Z-02（模型文件统一仓 · E:\model · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。工具缓存环境变量归拢清单待用户批。<br>2026-09-04 · v0.6 写入 Z-03（技能台账 · E:\skill · 登记制 · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.7 写入 Z-04（MCP 服务与 CLI 工具台账 · E:\mcp / E:\cli · 登记制 · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.8 写入 Z-05（多 Agent 协作 · 全机行为默认 · 协作与任务编排）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.9 写入 Z-06（治理文档统一版本库 · git · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.10 写入 Z-07（外链巡检 · 登记↔实体一致性核查 · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.11 写入 Z-08（纪要即记忆 · 跨会话续作 · 记忆与续作）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.12 写入 Z-10（治理体系多机部署 · 主仓权威 · 使用机只读 · 效力与总纲）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.13 写入 Z-09（敏感信息红线 · 凭据零明文 · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。<br>2026-09-05 · v0.14 写入 Z-11（记忆分层 · CLAUDE.md / memory / 纪要 / 活档 · 记忆与续作）、Z-12（红线钩子化 · hooks 把关 · 效力与总纲）；镜像追加至用户级 CLAUDE.md。</p>
+  <h2>变更记录<span class="tick"></span><span class="cnt">v0.15 · 已批准 12 条</span></h2>
+  <p class="cl">2026-09-03 · v0.1 建档（误含方法论 R-0~R-5）。v0.2 清空、逐条批准制。v0.3 立宪更名：正式定名「总则」，动态分类结论板，与执行结构一一对应互跳。<br>2026-09-03 · v0.4 写入 Z-01（适用范围·效力与总纲），移除界面示意演示区，镜像部署用户级 CLAUDE.md。<br>2026-09-03 · v0.5 写入 Z-02（模型文件统一仓 · E:\01-model · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。工具缓存环境变量归拢清单待用户批。<br>2026-09-04 · v0.6 写入 Z-03（技能台账 · E:\02-skill · 登记制 · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.7 写入 Z-04（MCP 服务与 CLI 工具台账 · E:\03-mcp / E:\04-cli · 登记制 · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.8 写入 Z-05（多 Agent 协作 · 全机行为默认 · 协作与任务编排）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.9 写入 Z-06（治理文档统一版本库 · git · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.10 写入 Z-07（外链巡检 · 登记↔实体一致性核查 · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.11 写入 Z-08（纪要即记忆 · 跨会话续作 · 记忆与续作）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.12 写入 Z-10（治理体系多机部署 · 主仓权威 · 使用机只读 · 效力与总纲）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.13 写入 Z-09（敏感信息红线 · 凭据零明文 · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。<br>2026-09-05 · v0.14 写入 Z-11（记忆分层 · CLAUDE.md / memory / 纪要 / 活档 · 记忆与续作）、Z-12（红线钩子化 · hooks 把关 · 效力与总纲）；镜像追加至用户级 CLAUDE.md。<br>2026-09-05 · v0.15 四登记仓编号化改名：E:\model→E:\01-model、E:\skill→E:\02-skill、E:\mcp→E:\03-mcp、E:\cli→E:\04-cli（文件夹物理改名＋系统接线/环境变量/ComfyUI/ai-env/skill 全部同步，小莫活档一并更新）；本页历史条目改以现名表述。纪要见 过程记录 2026-09-05-23-四登记仓编号化改名。</p>
 </div>
 </body>
 </html>
