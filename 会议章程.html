@@ -76,7 +76,7 @@ tbody tr:hover{background:#faf9fe}
   </div>
   <h1>会议章程</h1>
   <p class="sub">本工作区 = 一场长期举行的「最高领导机构会议」。本章程规定这场会议<b>自己怎么开、怎么产出总则</b>，以及建立总则的技术路线。<b>章程若调整，产出总则的技术路线随之改变。</b></p>
-  <div class="meta"><span>章程条款 9</span><span>技术通道 3</span><span>状态 · 当前生效</span><span>更新 2026-09-04</span></div>
+  <div class="meta"><span>章程条款 9</span><span>技术通道 3</span><span>状态 · 当前生效</span><span>更新 2026-09-13</span></div>
 </div></header>
 
 <div class="wrap">
@@ -95,6 +95,12 @@ tbody tr:hover{background:#faf9fe}
     <div class="card"><div class="card-in"><h3><span class="idx">会议主体</span></h3><ul class="kv">
       <li><span class="k">用户</span><span class="v">唯一决定权：逐条批准总则、批准本章程修订。</span></li>
       <li><span class="k">Claude</span><span class="v">专业参谋（把关、优化、起草）+ 会议主持。决议需落文件时，把整批一句交办给助理「小希 · 书记长」（P-8），不亲自逐页改写，随即回到与你讨论。</span></li>
+      <li><span class="k">秘书长</span><span class="v">顶层主会话的正式职衔＝秘书长（详见下"秘书长"角色卡）。常驻、与用户单线程对话不中断。</span></li>
+    </ul></div></div>
+    <div class="card"><div class="card-in"><h3><span class="idx">秘书长</span></h3><ul class="kv">
+      <li><span class="k">定位</span><span class="v">治理体系顶层主会话 = 秘书长（= 顶层主会话；用户在对话里的"我"）。常驻、对话不中断，负责与用户单线程聊需求、逐条拍板总则、批准章程修订。</span></li>
+      <li><span class="k">职责</span><span class="v">与用户单线程对话、逐条拍板；决议需落文件时把整批一句交办给小希·书记长（P-8），随即回到与用户讨论。</span></li>
+      <li><span class="k">不干</span><span class="v">不亲自逐页改写三页 HTML；不替用户决定；不替用户做权限外的事。</span></li>
     </ul></div></div>
     <div class="card"><div class="card-in"><h3><span class="idx">小希 · 书记长</span></h3><ul class="kv">
       <li><span class="k">定位</span><span class="v">常设执行助理（用户定名：小希）＝ 书记团的领导（首席书记）。主会话的"执行臂"。</span></li>
@@ -128,6 +134,7 @@ tbody tr:hover{background:#faf9fe}
   </div>
 
   <h2>3 · 产出总则的技术路线 <span class="cnt">管线 · 章程 P-7 变更时同步此处</span><span class="tick"></span></h2>
+  <div class="note"><b>三层级联：</b>顶层主会话（= 秘书长）→ 小希·书记长 → 书记团（≥3 书记子 Agent 并行）。秘书长常驻、与用户对话不中断。</div>
   <div class="card"><div class="card-in"><ol class="tl">
     <li><span class="n">0</span><div class="b"><span class="t">议题出现 <span class="role ro">用户</span></span><p>提出一个想法 / 一条要求。</p></div></li>
     <li><span class="n">1</span><div class="b"><span class="t">记入草案 <span class="role rl">书记 · 草案</span></span><p>写进 草案.html 起草。</p></div></li>
@@ -159,6 +166,7 @@ tbody tr:hover{background:#faf9fe}
     <tr><td><code>总则.html</code></td><td>★获准结论 · 动态分类（唯一权威）</td><td>书记 · 总则（经书记长编排）</td><td>仅被读取时</td></tr>
     <tr><td><code>执行结构.html</code></td><td>总则逐条展开 · 一一对应</td><td>书记 · 执行（经书记长编排）</td><td>仅被读取时</td></tr>
     <tr><td><code>过程记录\*.md</code></td><td>会议纪要 · 决策痕迹</td><td>书记长 · 每次决议</td><td>追溯时</td></tr>
+    <tr><td><code>秘书长</code></td><td>与用户单线程对话、逐条拍板、一句话交办书记长；不亲自逐页改写文件</td><td>主会话本体（= 顶层主会话）</td><td>全程常驻</td></tr>
     <tr><td><code>书记长</code></td><td>执行助理 · 书记团领导＝一切批量落文件：编排≥3 书记并行写三页、台账登记/更新（E:\01-model、E:\02-skill 等）、镜像部署、汇总核验、落纪要、回报</td><td>主会话交办时召出</td><td>不经手页面正文（各页由所派书记执笔）</td></tr>
     <tr><td><code>C:\Users\pc\.claude\CLAUDE.md</code></td><td>跨项目软规则镜像目标</td><td>书记 · 总则 单向同步</td><td><b>每会话自动全文</b></td></tr>
     <tr><td><code>C:\Users\pc\.claude\settings.json</code></td><td>硬红线 deny + hooks</td><td>人 + 书记 · 总则</td><td>系统即时</td></tr>
@@ -181,6 +189,7 @@ tbody tr:hover{background:#faf9fe}
     <li><span class="k">v0.3</span><span class="v">2026-09-03 · P-8 升格为「书记长领衔」：设常设执行助理「书记长（首席书记）」，主会话只一句交办整批，不再逐人派活、不亲自逐页改写；纪要落档移交书记长。§1 增书记长角色、§3 管线增 7 步纪要、§5 分工表更新。</span></li>
     <li><span class="k">v0.4</span><span class="v">2026-09-04 · 分工边界入宪：主会话＝讨论、定案、一句话交办；小希（书记长）＝一切批量落文件（三页 HTML、台账登记/更新、纪要落档、镜像部署），主会话不再亲自逐项写文件。P-8 卡片补边界句、§5 书记长行一致化；执行助理定名「小希」的称谓此前已在 v0.3 确立，本次只补边界、不涉称谓变更。</span></li>
     <li><span class="k">v0.5</span><span class="v">2026-09-04 · P-9 多 Agent 拆分规则入宪（含何时拆 / 拆几个 / 怎么排与 F1–F6 参考模板，模板仅供参考非强制归类）。方法论单页修订，按纪要-05 先例不入 草案/总则/执行结构、不镜像 CLAUDE.md。</span></li>
+    <li><span class="k">v0.6</span><span class="v">2026-09-13 · 秘书长入宪（Z-15）：§1 增"秘书长"角色卡与会议主体术语注、§3 管线加"三层级联"句、§5 分工表增秘书长行。"秘书长（= 顶层主会话）"与既有"主会话/顶层主会话"无矛盾共存，P-8/P-9 卡片正文不改。</span></li>
   </ul></div></div>
 </div>
 </body>
