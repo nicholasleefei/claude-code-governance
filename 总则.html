@@ -66,17 +66,17 @@ h2 .cnt{margin-left:auto;font-size:12px;color:var(--sub);background:#e7efee;bord
   </div>
   <h1>总则 <span class="medal">🏛</span></h1>
   <p class="sub">会议通过的<b>最高结论</b>。只写结论、不做展开；每条归入分类、按标签动态过滤，并一键跳到 <a href="执行结构.html" style="color:#c7efe8">执行结构</a> 看落地详解。<b>只有会议逐条批准的内容才写入本页。</b></p>
-  <div class="meta"><span>已批准 15</span><span>分类 · 效力与总纲 + 文件与存储规范 + 协作与任务编排 + 记忆与续作 + 经验沉淀</span><span>状态 · 持续产出</span><span>更新 2026-09-13</span></div>
+  <div class="meta"><span>已批准 16</span><span>分类 · 效力与总纲 + 文件与存储规范 + 协作与任务编排 + 记忆与续作 + 经验沉淀</span><span>状态 · 持续产出</span><span>更新 2026-09-13</span></div>
 </div></header>
 
 <div class="wrap">
-  <div class="banner"><b>已生效 15 条：Z-01 适用范围 · Z-02 模型文件统一仓 · Z-03 技能台账 · Z-04 MCP 与 CLI 工具台账 · Z-05 多 Agent 协作 · Z-06 治理文档统一版本库 · Z-07 外链巡检 · Z-08 纪要即记忆 · 跨会话续作 · Z-09 敏感信息红线 · 凭据零明文 · Z-10 治理体系多机部署 · 主仓权威 · 使用机只读 · Z-11 记忆分层 · CLAUDE.md / memory / 纪要 / 活档 · Z-12 红线钩子化 · hooks 把关 · Z-13 CLI/MCP 跑通经验沉淀 · Z-15 秘书长 · 治理体系三层级联 · Z-14 总则治理体系自包含 skill 化。</b>本页＝动态分类结论板：每条一张结论卡 + 分类标签，卡上 [执行详解 ▸] 跳执行结构。未批准的想法仍在 草案.html。</div>
+  <div class="banner"><b>已生效 16 条：Z-01 适用范围 · Z-02 模型文件统一仓 · Z-03 技能台账 · Z-04 MCP 与 CLI 工具台账 · Z-05 多 Agent 协作 · Z-06 治理文档统一版本库 · Z-07 外链巡检 · Z-08 纪要即记忆 · 跨会话续作 · Z-09 敏感信息红线 · 凭据零明文 · Z-10 治理体系多机部署 · 主仓权威 · 使用机只读 · Z-11 记忆分层 · CLAUDE.md / memory / 纪要 / 活档 · Z-12 红线钩子化 · hooks 把关 · Z-13 CLI/MCP 跑通经验沉淀 · Z-15 秘书长（=顶层主会话）· 治理体系三层级联 · Z-14 总则治理体系自包含 skill 化 · Z-16 例行任务定时化 · 真无人值守。</b>本页＝动态分类结论板：每条一张结论卡 + 分类标签，卡上 [执行详解 ▸] 跳执行结构。未批准的想法仍在 草案.html。</div>
 
   <div class="filter">
-    <span class="chip on">全部 <span class="n">15</span></span>
+    <span class="chip on">全部 <span class="n">16</span></span>
     <span class="chip">效力与总纲 <span class="n">4</span></span>
     <span class="chip">文件与存储规范 <span class="n">6</span></span>
-    <span class="chip">协作与任务编排 <span class="n">2</span></span>
+    <span class="chip">协作与任务编排 <span class="n">3</span></span>
     <span class="chip">记忆与续作 <span class="n">2</span></span>
     <span class="chip">经验沉淀 <span class="n">1</span></span>
   </div>
@@ -218,6 +218,15 @@ h2 .cnt{margin-left:auto;font-size:12px;color:var(--sub);background:#e7efee;bord
       <div class="tags"><span class="tag t-collab">协作与任务编排</span></div>
       <a class="btn" href="执行结构.html#E-14">执行详解 ▸</a>
     </div>
+    <div class="pcard" id="z-16" style="border-left-color:#7c3aed">
+      <div class="pt">
+        <b>例行任务定时化 · 真无人值守</b>
+        <span class="pno">Z-16 · 已批准 2026-09-13</span>
+        <p class="ztext">跨天/跨会话的例行动作（首推外链巡检周检）走 OS 级真定时，不依赖常驻会话：机制＝Windows 任务计划程序到点拉起无头 <code>claude -p</code> 执行。理由：会话内定时/循环只在当前会话存活、约 7 天自动过期，扛不起"每周固定必跑"；云 Routine 读不到本机 E:\。无人值守默认：只读优先（<code>--permission-mode plan</code>）；用 <code>--max-turns</code> / <code>--max-budget-usd</code> 护栏防跑飞烧钱；stdout+stderr 落 过程记录（只增不改）；exit≠0 即告警。需自动落纪要才有限放宽：<code>--permission-mode acceptEdits</code> 且 <code>--allowedTools</code> 限定到 过程记录/**，不放全写。认证不用交互登录（OAuth 约每周过期、无头下不可靠），用 setup-token / ANTHROPIC_API_KEY 环境变量（遵 Z-09，只记变量名）；出网 HTTPS_PROXY 与 git 的 http.proxy 是两回事、分别配。哪些任务上系统定时、频次，按本机实际分批启用并登记，全部可审计、可回滚。本条只定机制，具体任务启用另行登记批准。</p>
+      </div>
+      <div class="tags"><span class="tag t-collab">协作与任务编排</span></div>
+      <a class="btn" href="执行结构.html#E-16">执行详解 ▸</a>
+    </div>
   </div>
 
   <h2>本页规则<span class="tick"></span></h2>
@@ -228,8 +237,8 @@ h2 .cnt{margin-left:auto;font-size:12px;color:var(--sub);background:#e7efee;bord
     <li><span class="k">逐条批准</span><span class="v">写入前必须已获你明确同意；否决项留在草案。</span></li>
   </ul></div>
 
-  <h2>变更记录<span class="tick"></span><span class="cnt">v0.17 · 已批准 15 条</span></h2>
-  <p class="cl">2026-09-03 · v0.1 建档（误含方法论 R-0~R-5）。v0.2 清空、逐条批准制。v0.3 立宪更名：正式定名「总则」，动态分类结论板，与执行结构一一对应互跳。<br>2026-09-03 · v0.4 写入 Z-01（适用范围·效力与总纲），移除界面示意演示区，镜像部署用户级 CLAUDE.md。<br>2026-09-03 · v0.5 写入 Z-02（模型文件统一仓 · E:\01-model · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。工具缓存环境变量归拢清单待用户批。<br>2026-09-04 · v0.6 写入 Z-03（技能台账 · E:\02-skill · 登记制 · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.7 写入 Z-04（MCP 服务与 CLI 工具台账 · E:\03-mcp / E:\04-cli · 登记制 · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.8 写入 Z-05（多 Agent 协作 · 全机行为默认 · 协作与任务编排）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.9 写入 Z-06（治理文档统一版本库 · git · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.10 写入 Z-07（外链巡检 · 登记↔实体一致性核查 · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.11 写入 Z-08（纪要即记忆 · 跨会话续作 · 记忆与续作）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.12 写入 Z-10（治理体系多机部署 · 主仓权威 · 使用机只读 · 效力与总纲）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.13 写入 Z-09（敏感信息红线 · 凭据零明文 · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。<br>2026-09-05 · v0.14 写入 Z-11（记忆分层 · CLAUDE.md / memory / 纪要 / 活档 · 记忆与续作）、Z-12（红线钩子化 · hooks 把关 · 效力与总纲）；镜像追加至用户级 CLAUDE.md。<br>2026-09-05 · v0.15 四登记仓编号化改名：E:\model→E:\01-model、E:\skill→E:\02-skill、E:\mcp→E:\03-mcp、E:\cli→E:\04-cli（文件夹物理改名＋系统接线/环境变量/ComfyUI/ai-env/skill 全部同步，小莫活档一并更新）；本页历史条目改以现名表述。纪要见 过程记录 2026-09-05-23-四登记仓编号化改名。<br>2026-09-06 · v0.16 写入 Z-13（CLI/MCP 跑通经验沉淀 · 经验沉淀）；新建 E:\04-cli\跑通纪要\ 目录与索引页；本条性质为软规则/记忆型经验，入专档即生效，不强制走 §4 三通道。<br>2026-09-13 · v0.17 写入 Z-15（秘书长 · 治理体系三层级联 · 效力与总纲，入宪在先）、Z-14（总则治理体系自包含 skill 化 · 协作与任务编排），更新计数与分类；镜像追加至用户级 CLAUDE.md。</p>
+  <h2>变更记录<span class="tick"></span><span class="cnt">v0.18 · 已批准 16 条</span></h2>
+  <p class="cl">2026-09-03 · v0.1 建档（误含方法论 R-0~R-5）。v0.2 清空、逐条批准制。v0.3 立宪更名：正式定名「总则」，动态分类结论板，与执行结构一一对应互跳。<br>2026-09-03 · v0.4 写入 Z-01（适用范围·效力与总纲），移除界面示意演示区，镜像部署用户级 CLAUDE.md。<br>2026-09-03 · v0.5 写入 Z-02（模型文件统一仓 · E:\01-model · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。工具缓存环境变量归拢清单待用户批。<br>2026-09-04 · v0.6 写入 Z-03（技能台账 · E:\02-skill · 登记制 · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.7 写入 Z-04（MCP 服务与 CLI 工具台账 · E:\03-mcp / E:\04-cli · 登记制 · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.8 写入 Z-05（多 Agent 协作 · 全机行为默认 · 协作与任务编排）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.9 写入 Z-06（治理文档统一版本库 · git · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.10 写入 Z-07（外链巡检 · 登记↔实体一致性核查 · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.11 写入 Z-08（纪要即记忆 · 跨会话续作 · 记忆与续作）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.12 写入 Z-10（治理体系多机部署 · 主仓权威 · 使用机只读 · 效力与总纲）；镜像追加至用户级 CLAUDE.md。<br>2026-09-04 · v0.13 写入 Z-09（敏感信息红线 · 凭据零明文 · 文件与存储规范）；镜像追加至用户级 CLAUDE.md。<br>2026-09-05 · v0.14 写入 Z-11（记忆分层 · CLAUDE.md / memory / 纪要 / 活档 · 记忆与续作）、Z-12（红线钩子化 · hooks 把关 · 效力与总纲）；镜像追加至用户级 CLAUDE.md。<br>2026-09-05 · v0.15 四登记仓编号化改名：E:\model→E:\01-model、E:\skill→E:\02-skill、E:\mcp→E:\03-mcp、E:\cli→E:\04-cli（文件夹物理改名＋系统接线/环境变量/ComfyUI/ai-env/skill 全部同步，小莫活档一并更新）；本页历史条目改以现名表述。纪要见 过程记录 2026-09-05-23-四登记仓编号化改名。<br>2026-09-06 · v0.16 写入 Z-13（CLI/MCP 跑通经验沉淀 · 经验沉淀）；新建 E:\04-cli\跑通纪要\ 目录与索引页；本条性质为软规则/记忆型经验，入专档即生效，不强制走 §4 三通道。<br>2026-09-13 · v0.17 写入 Z-15（秘书长 · 治理体系三层级联 · 效力与总纲，入宪在先）、Z-14（总则治理体系自包含 skill 化 · 协作与任务编排），更新计数与分类；镜像追加至用户级 CLAUDE.md。<br>2026-09-13 · v0.18 T-13（例行任务定时化 · 真无人值守）定案纳入 Z-16（协作与任务编排；原拟挂 Z-13，因该编号已于 09-06 被 CLI/MCP 经验条占用，改挂 Z-16），草案清位；计数 15→16、协作类胶囊 2→3（合计 4+6+3+2+1=16）；横幅 Z-15 条名补术语括注；镜像追加至用户级 CLAUDE.md。本场 general-purpose 书记因安全分类器两次超时不可派，总则页与 CLAUDE.md 镜像由书记长亲执、对抗性核验兜底。</p>
 </div>
 </body>
 </html>
